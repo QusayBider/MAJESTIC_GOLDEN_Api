@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" msdata:Ordinal="5" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  
+  <!-- General Messages -->
+  <data name="Success" xml:space="preserve">
+    <value>نجاح</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>خطأ</value>
+  </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>غير موجود</value>
+  </data>
+  <data name="Unauthorized" xml:space="preserve">
+    <value>غير مصرح</value>
+  </data>
+  <data name="InvalidCredentials" xml:space="preserve">
+    <value>بيانات الدخول غير صحيحة</value>
+  </data>
+  
+  <!-- Authentication -->
+  <data name="LoginSuccess" xml:space="preserve">
+    <value>تم تسجيل الدخول بنجاح</value>
+  </data>
+  <data name="RegisterSuccess" xml:space="preserve">
+    <value>تم التسجيل بنجاح</value>
+  </data>
+  <data name="UserNotFound" xml:space="preserve">
+    <value>المستخدم غير موجود</value>
+  </data>
+  <data name="EmailAlreadyExists" xml:space="preserve">
+    <value>البريد الإلكتروني موجود بالفعل</value>
+  </data>
+  
+  <!-- Branches -->
+  <data name="BranchCreated" xml:space="preserve">
+    <value>تم إنشاء الفرع بنجاح</value>
+  </data>
+  <data name="BranchUpdated" xml:space="preserve">
+    <value>تم تحديث الفرع بنجاح</value>
+  </data>
+  <data name="BranchDeleted" xml:space="preserve">
+    <value>تم حذف الفرع بنجاح</value>
+  </data>
+  <data name="BranchNotFound" xml:space="preserve">
+    <value>الفرع غير موجود</value>
+  </data>
+  
+  <!-- Patients -->
+  <data name="PatientCreated" xml:space="preserve">
+    <value>تم إضافة المريض بنجاح</value>
+  </data>
+  <data name="PatientUpdated" xml:space="preserve">
+    <value>تم تحديث بيانات المريض بنجاح</value>
+  </data>
+  <data name="PatientDeleted" xml:space="preserve">
+    <value>تم حذف المريض بنجاح</value>
+  </data>
+  <data name="PatientNotFound" xml:space="preserve">
+    <value>المريض غير موجود</value>
+  </data>
+  
+  <!-- Appointments -->
+  <data name="AppointmentCreated" xml:space="preserve">
+    <value>تم حجز الموعد بنجاح</value>
+  </data>
+  <data name="AppointmentUpdated" xml:space="preserve">
+    <value>تم تحديث الموعد بنجاح</value>
+  </data>
+  <data name="AppointmentCancelled" xml:space="preserve">
+    <value>تم إلغاء الموعد بنجاح</value>
+  </data>
+  <data name="AppointmentNotFound" xml:space="preserve">
+    <value>الموعد غير موجود</value>
+  </data>
+  <data name="AppointmentConflict" xml:space="preserve">
+    <value>هذا الموعد محجوز بالفعل</value>
+  </data>
+  
+  <!-- Invoices -->
+  <data name="InvoiceCreated" xml:space="preserve">
+    <value>تم إنشاء الفاتورة بنجاح</value>
+  </data>
+  <data name="InvoiceUpdated" xml:space="preserve">
+    <value>تم تحديث الفاتورة بنجاح</value>
+  </data>
+  <data name="InvoiceNotFound" xml:space="preserve">
+    <value>الفاتورة غير موجودة</value>
+  </data>
+  <data name="PaymentRecorded" xml:space="preserve">
+    <value>تم تسجيل الدفع بنجاح</value>
+  </data>
+  
+  <!-- Services -->
+  <data name="ServiceCreated" xml:space="preserve">
+    <value>تم إضافة الخدمة بنجاح</value>
+  </data>
+  <data name="ServiceUpdated" xml:space="preserve">
+    <value>تم تحديث الخدمة بنجاح</value>
+  </data>
+  <data name="ServiceDeleted" xml:space="preserve">
+    <value>تم حذف الخدمة بنجاح</value>
+  </data>
+  <data name="ServiceNotFound" xml:space="preserve">
+    <value>الخدمة غير موجودة</value>
+  </data>
+  
+  <!-- Lab Requests -->
+  <data name="LabRequestCreated" xml:space="preserve">
+    <value>تم إنشاء طلب المختبر بنجاح</value>
+  </data>
+  <data name="LabRequestUpdated" xml:space="preserve">
+    <value>تم تحديث طلب المختبر بنجاح</value>
+  </data>
+  <data name="LabRequestNotFound" xml:space="preserve">
+    <value>طلب المختبر غير موجود</value>
+  </data>
+  
+  <!-- Case Transfers -->
+  <data name="CaseTransferred" xml:space="preserve">
+    <value>تم تحويل الحالة بنجاح</value>
+  </data>
+  <data name="CaseTransferNotFound" xml:space="preserve">
+    <value>تحويل الحالة غير موجود</value>
+  </data>
+  
+  <!-- Dental Chart -->
+  <data name="ToothUpdated" xml:space="preserve">
+    <value>تم تحديث معلومات السن بنجاح</value>
+  </data>
+  <data name="ToothNotFound" xml:space="preserve">
+    <value>سجل السن غير موجود</value>
+  </data>
+  
+  <!-- Status -->
+  <data name="Scheduled" xml:space="preserve">
+    <value>مجدول</value>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>مكتمل</value>
+  </data>
+  <data name="Cancelled" xml:space="preserve">
+    <value>ملغى</value>
+  </data>
+  <data name="Pending" xml:space="preserve">
+    <value>معلق</value>
+  </data>
+  <data name="Paid" xml:space="preserve">
+    <value>مدفوع</value>
+  </data>
+  <data name="Unpaid" xml:space="preserve">
+    <value>غير مدفوع</value>
+  </data>
+  <data name="Partial" xml:space="preserve">
+    <value>دفع جزئي</value>
+  </data>
+  
+</root>
+
+
+

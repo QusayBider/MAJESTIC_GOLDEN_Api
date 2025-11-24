@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" msdata:Ordinal="5" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  
+  <!-- General Messages -->
+  <data name="Success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>Not Found</value>
+  </data>
+  <data name="Unauthorized" xml:space="preserve">
+    <value>Unauthorized</value>
+  </data>
+  <data name="InvalidCredentials" xml:space="preserve">
+    <value>Invalid credentials</value>
+  </data>
+  
+  <!-- Authentication -->
+  <data name="LoginSuccess" xml:space="preserve">
+    <value>Login successful</value>
+  </data>
+  <data name="RegisterSuccess" xml:space="preserve">
+    <value>Registration successful</value>
+  </data>
+  <data name="UserNotFound" xml:space="preserve">
+    <value>User not found</value>
+  </data>
+  <data name="EmailAlreadyExists" xml:space="preserve">
+    <value>Email already exists</value>
+  </data>
+  
+  <!-- Branches -->
+  <data name="BranchCreated" xml:space="preserve">
+    <value>Branch created successfully</value>
+  </data>
+  <data name="BranchUpdated" xml:space="preserve">
+    <value>Branch updated successfully</value>
+  </data>
+  <data name="BranchDeleted" xml:space="preserve">
+    <value>Branch deleted successfully</value>
+  </data>
+  <data name="BranchNotFound" xml:space="preserve">
+    <value>Branch not found</value>
+  </data>
+  
+  <!-- Patients -->
+  <data name="PatientCreated" xml:space="preserve">
+    <value>Patient created successfully</value>
+  </data>
+  <data name="PatientUpdated" xml:space="preserve">
+    <value>Patient updated successfully</value>
+  </data>
+  <data name="PatientDeleted" xml:space="preserve">
+    <value>Patient deleted successfully</value>
+  </data>
+  <data name="PatientNotFound" xml:space="preserve">
+    <value>Patient not found</value>
+  </data>
+  
+  <!-- Appointments -->
+  <data name="AppointmentCreated" xml:space="preserve">
+    <value>Appointment booked successfully</value>
+  </data>
+  <data name="AppointmentUpdated" xml:space="preserve">
+    <value>Appointment updated successfully</value>
+  </data>
+  <data name="AppointmentCancelled" xml:space="preserve">
+    <value>Appointment cancelled successfully</value>
+  </data>
+  <data name="AppointmentNotFound" xml:space="preserve">
+    <value>Appointment not found</value>
+  </data>
+  <data name="AppointmentConflict" xml:space="preserve">
+    <value>Time slot is already booked</value>
+  </data>
+  
+  <!-- Invoices -->
+  <data name="InvoiceCreated" xml:space="preserve">
+    <value>Invoice created successfully</value>
+  </data>
+  <data name="InvoiceUpdated" xml:space="preserve">
+    <value>Invoice updated successfully</value>
+  </data>
+  <data name="InvoiceNotFound" xml:space="preserve">
+    <value>Invoice not found</value>
+  </data>
+  <data name="PaymentRecorded" xml:space="preserve">
+    <value>Payment recorded successfully</value>
+  </data>
+  
+  <!-- Services -->
+  <data name="ServiceCreated" xml:space="preserve">
+    <value>Service created successfully</value>
+  </data>
+  <data name="ServiceUpdated" xml:space="preserve">
+    <value>Service updated successfully</value>
+  </data>
+  <data name="ServiceDeleted" xml:space="preserve">
+    <value>Service deleted successfully</value>
+  </data>
+  <data name="ServiceNotFound" xml:space="preserve">
+    <value>Service not found</value>
+  </data>
+  
+  <!-- Lab Requests -->
+  <data name="LabRequestCreated" xml:space="preserve">
+    <value>Lab request created successfully</value>
+  </data>
+  <data name="LabRequestUpdated" xml:space="preserve">
+    <value>Lab request updated successfully</value>
+  </data>
+  <data name="LabRequestNotFound" xml:space="preserve">
+    <value>Lab request not found</value>
+  </data>
+  
+  <!-- Case Transfers -->
+  <data name="CaseTransferred" xml:space="preserve">
+    <value>Case transferred successfully</value>
+  </data>
+  <data name="CaseTransferNotFound" xml:space="preserve">
+    <value>Case transfer not found</value>
+  </data>
+  
+  <!-- Dental Chart -->
+  <data name="ToothUpdated" xml:space="preserve">
+    <value>Tooth information updated successfully</value>
+  </data>
+  <data name="ToothNotFound" xml:space="preserve">
+    <value>Tooth record not found</value>
+  </data>
+  
+  <!-- Status -->
+  <data name="Scheduled" xml:space="preserve">
+    <value>Scheduled</value>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>Completed</value>
+  </data>
+  <data name="Cancelled" xml:space="preserve">
+    <value>Cancelled</value>
+  </data>
+  <data name="Pending" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="Paid" xml:space="preserve">
+    <value>Paid</value>
+  </data>
+  <data name="Unpaid" xml:space="preserve">
+    <value>Unpaid</value>
+  </data>
+  <data name="Partial" xml:space="preserve">
+    <value>Partial</value>
+  </data>
+  
+</root>
+
+
+

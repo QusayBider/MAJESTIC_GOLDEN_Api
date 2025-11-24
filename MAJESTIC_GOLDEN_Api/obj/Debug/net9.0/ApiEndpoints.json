@@ -1,0 +1,1921 @@
+[
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Appointments.AppointmentsController",
+    "Method": "GetAppointmentById",
+    "RelativePath": "api/Appointments/Appointments/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Appointments.AppointmentsController",
+    "Method": "CancelSubDoctorAppointment",
+    "RelativePath": "api/Appointments/Appointments/CancelSubDoctorAppointment/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "cancelRequest",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.CancelAppointmentDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Appointments.AppointmentsController",
+    "Method": "CreateAppointment",
+    "RelativePath": "api/Appointments/Appointments/CreateAppointment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.AppointmentRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Appointments.AppointmentsController",
+    "Method": "CreatePatientsAppointment",
+    "RelativePath": "api/Appointments/Appointments/CreatePatientsAppointment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.AppointmentPatientRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Appointments.AppointmentsController",
+    "Method": "CreateSubDoctorAppointment",
+    "RelativePath": "api/Appointments/Appointments/CreateSubDoctorAppointment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.AppointmentSubDoctorRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Appointments.AppointmentsController",
+    "Method": "GetAppointmentsByDoctor",
+    "RelativePath": "api/Appointments/Appointments/doctor/{doctorId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "doctorId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "date",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Appointments.AppointmentsController",
+    "Method": "GetMyPatients",
+    "RelativePath": "api/Appointments/Appointments/Get_all_patients_treated_by_current_doctor",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Appointments.AppointmentsController",
+    "Method": "GetPatientAppointments",
+    "RelativePath": "api/Appointments/Appointments/GetPatientAppointment",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Appointments.AppointmentsController",
+    "Method": "GetMyAppointments",
+    "RelativePath": "api/Appointments/Appointments/GetSubDoctorAppointments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Appointments.AppointmentsController",
+    "Method": "GetAppointmentsByPatient",
+    "RelativePath": "api/Appointments/Appointments/patient/{patientId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "patientId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Appointments.AppointmentsController",
+    "Method": "CancelPatientAppointment",
+    "RelativePath": "api/Appointments/Appointments/PatientCancelAppointment/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.CancelAppointmentDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Appointments.AppointmentsController",
+    "Method": "GetSubDoctorTodayAppointments",
+    "RelativePath": "api/Appointments/Appointments/SubDoctorTodayAppointments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Appointments.AppointmentsController",
+    "Method": "GetTodayAppointments",
+    "RelativePath": "api/Appointments/Appointments/today",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Appointments.AppointmentsController",
+    "Method": "GetUpcomingSubDoctorAppointments",
+    "RelativePath": "api/Appointments/Appointments/UpcomingSubDoctorAppointments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Appointments.AppointmentsController",
+    "Method": "UpdateAppointment",
+    "RelativePath": "api/Appointments/Appointments/UpdateAnAppointment/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.UpdateAppointmentStatusRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Appointments.AppointmentsController",
+    "Method": "UpdateAppointmentStatus",
+    "RelativePath": "api/Appointments/Appointments/UpdateAppointmentStatus/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.UpdateAppointmentStatusDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Appointments.AppointmentsController",
+    "Method": "UpdateSubDoctorAppointment",
+    "RelativePath": "api/Appointments/Appointments/UpdateSubDoctorAppointment/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.UpdateAppointmentStatusRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Appointments.AppointmentsController",
+    "Method": "UpdateSubDoctorAppointmentStatus",
+    "RelativePath": "api/Appointments/Appointments/UpdateSubDoctorAppointmentStatus/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.UpdateAppointmentStatusDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Branches.BranchesController",
+    "Method": "CreateBranch",
+    "RelativePath": "api/Branch/Branches",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.BranchRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Branches.BranchesController",
+    "Method": "GetBranchById",
+    "RelativePath": "api/Branch/Branches/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Branches.BranchesController",
+    "Method": "UpdateBranch",
+    "RelativePath": "api/Branch/Branches/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.UpdateBranchRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Branches.BranchesController",
+    "Method": "DeleteBranch",
+    "RelativePath": "api/Branch/Branches/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Branches.BranchesController",
+    "Method": "GetActiveBranches",
+    "RelativePath": "api/Branch/Branches/active",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Branches.BranchesController",
+    "Method": "GetAllBranches",
+    "RelativePath": "api/Branch/Branches/Get_all_branches",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.TreatmentCaseService.CaseTransfersController",
+    "Method": "CreateCaseTransfer",
+    "RelativePath": "api/CaseTransfers/CaseTransfers",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.CaseTransferRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.TreatmentCaseService.CaseTransfersController",
+    "Method": "GetCaseTransferById",
+    "RelativePath": "api/CaseTransfers/CaseTransfers/case-transfer/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.TreatmentCaseService.CaseTransfersController",
+    "Method": "GetCaseTransfersByDoctor",
+    "RelativePath": "api/CaseTransfers/CaseTransfers/Case-Transfers-By-Doctor/{doctorId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "doctorId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.TreatmentCaseService.CaseTransfersController",
+    "Method": "GetCaseTransfersByPatient",
+    "RelativePath": "api/CaseTransfers/CaseTransfers/Case-Transfers-ByPatient/{patientId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "patientId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.TreatmentCaseService.CaseTransfersController",
+    "Method": "GetPendingCaseTransfers",
+    "RelativePath": "api/CaseTransfers/CaseTransfers/pending-case-transfers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.TreatmentCaseService.CaseTransfersController",
+    "Method": "UpdateCaseTransferStatus",
+    "RelativePath": "api/CaseTransfers/CaseTransfers/Update-Status/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.CaseTransferStatusDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.DashboardController",
+    "Method": "GetDashboardStatistics",
+    "RelativePath": "api/Dashboard",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.DashboardController",
+    "Method": "GetBranchStatistics",
+    "RelativePath": "api/Dashboard/branches",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.DashboardController",
+    "Method": "GetFinancialSummary",
+    "RelativePath": "api/Dashboard/financial",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "startDate",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "endDate",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.DashboardController",
+    "Method": "GetStatisticsSummary",
+    "RelativePath": "api/Dashboard/statistics",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.DentalChartController",
+    "Method": "AddOrUpdateTooth",
+    "RelativePath": "api/DentalChart",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.PatientToothRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.DentalChartController",
+    "Method": "GetPatientDentalChart",
+    "RelativePath": "api/DentalChart/patient/{patientId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "patientId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.DentalChartController",
+    "Method": "GetTeethByPatient",
+    "RelativePath": "api/DentalChart/patient/{patientId}/teeth",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "patientId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.DentalChartController",
+    "Method": "GetToothByCompositeKey",
+    "RelativePath": "api/DentalChart/tooth/{toothId}/patient/{patientId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "toothId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "patientId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.DentalChartController",
+    "Method": "DeleteToothRecord",
+    "RelativePath": "api/DentalChart/tooth/{toothId}/patient/{patientId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "toothId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "patientId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Areas.HeadDoctor.HeadDoctorController",
+    "Method": "GetPaymentsByInvoice",
+    "RelativePath": "api/HeadDoctor/HeadDoctor/{invoiceId}/payments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "invoiceId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Areas.HeadDoctor.HeadDoctorController",
+    "Method": "DeletePatient",
+    "RelativePath": "api/HeadDoctor/HeadDoctor/Delete_a_patient/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Areas.HeadDoctor.HeadDoctorController",
+    "Method": "RecordPayment",
+    "RelativePath": "api/HeadDoctor/HeadDoctor/payments",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.PaymentRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Areas.HeadDoctor.HeadDoctorController",
+    "Method": "GetAllRoles",
+    "RelativePath": "api/HeadDoctor/HeadDoctor/roles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Areas.HeadDoctor.HeadDoctorController",
+    "Method": "DeleteUser",
+    "RelativePath": "api/HeadDoctor/HeadDoctor/users/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Areas.HeadDoctor.HeadDoctorController",
+    "Method": "ChangeUserRole",
+    "RelativePath": "api/HeadDoctor/HeadDoctor/users/{id}/role",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "model",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Responses.UserDTOChangeRole",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Areas.HeadDoctor.HeadDoctorController",
+    "Method": "ToggleUserStatus",
+    "RelativePath": "api/HeadDoctor/HeadDoctor/users/{id}/status",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "isActive",
+        "Type": "System.Boolean",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Areas.HeadDoctor.HeadDoctorController",
+    "Method": "AddRoleToUser",
+    "RelativePath": "api/HeadDoctor/HeadDoctor/users/{userId}/roles/{roleId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "roleId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Areas.HeadDoctor.HeadDoctorController",
+    "Method": "RemoveRoleFromUser",
+    "RelativePath": "api/HeadDoctor/HeadDoctor/users/{userId}/roles/{roleId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "roleId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Areas.HeadDoctor.HeadDoctorController",
+    "Method": "GetUsersByRole",
+    "RelativePath": "api/HeadDoctor/HeadDoctor/users/role/{roleName}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roleName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Identity.AccountController",
+    "Method": "AdminResetPassword",
+    "RelativePath": "api/Identity/Account/Admin_reset_password/{userId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.AdminResetPasswordRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Identity.AccountController",
+    "Method": "ChangePassword",
+    "RelativePath": "api/Identity/Account/ChangePassword",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.ChangePasswordRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Identity.AccountController",
+    "Method": "ConfirmEmail",
+    "RelativePath": "api/Identity/Account/ConfirmEmail",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Identity.AccountController",
+    "Method": "ForgetPassword",
+    "RelativePath": "api/Identity/Account/ForgetPassword",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.ForgetPasswordDTORequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Identity.AccountController",
+    "Method": "Login",
+    "RelativePath": "api/Identity/Account/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginDTORequest",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.LoginDTORequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Responses.UserDTOResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Identity.AccountController",
+    "Method": "GetProfile",
+    "RelativePath": "api/Identity/Account/Profile",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Responses.UserDTOResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Identity.AccountController",
+    "Method": "UpdateProfile",
+    "RelativePath": "api/Identity/Account/Profile",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateRequest",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.RegisterDTORequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Responses.UserDTOResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Identity.AccountController",
+    "Method": "Register",
+    "RelativePath": "api/Identity/Account/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registerDTORequest",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.RegisterDTORequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Responses.UserDTOResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Identity.AccountController",
+    "Method": "ResetPassword",
+    "RelativePath": "api/Identity/Account/ResetPassword",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.ResetPasswordDTORequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Invoices.InvoicesController",
+    "Method": "CreateInvoice",
+    "RelativePath": "api/Invoices/Invoices/Create_a_new_invoice",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.InvoiceRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Invoices.InvoicesController",
+    "Method": "CreateInvoice",
+    "RelativePath": "api/Invoices/Invoices/Create_a_new_invoice_subDoctor",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.InvoiceSubDoctorRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Invoices.InvoicesController",
+    "Method": "GetCurrentMonthSummary",
+    "RelativePath": "api/Invoices/Invoices/current-month-summary-subDoctor",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Invoices.InvoicesController",
+    "Method": "DeleteInvoice",
+    "RelativePath": "api/Invoices/Invoices/Delete_an_invoice/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Invoices.InvoicesController",
+    "Method": "DeleteItemFromInvoice",
+    "RelativePath": "api/Invoices/Invoices/Delete_Item_invoice/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Invoices.InvoicesController",
+    "Method": "GetUnpaidInvoices",
+    "RelativePath": "api/Invoices/Invoices/Get_all_unpaid_invoices",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Invoices.InvoicesController",
+    "Method": "GetUnpaidInvoicesByPatientId",
+    "RelativePath": "api/Invoices/Invoices/Get_all_unpaid_invoices_PatientId/{patientId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "patientId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Invoices.InvoicesController",
+    "Method": "GetInvoiceStatistics",
+    "RelativePath": "api/Invoices/Invoices/Get_invoices_statistics_subDoctor",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Invoices.InvoicesController",
+    "Method": "GetOutstandingDebts",
+    "RelativePath": "api/Invoices/Invoices/Get_outstanding_debts_for_my_patients_SubDoctor",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Invoices.InvoicesController",
+    "Method": "GetInvoiceByID",
+    "RelativePath": "api/Invoices/Invoices/GetInvoiceByID/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Invoices.InvoicesController",
+    "Method": "GetInvoicesByPatientId",
+    "RelativePath": "api/Invoices/Invoices/GetInvoiceByPatintId/{patientId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "patientId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Invoices.InvoicesController",
+    "Method": "GetMyInvoices",
+    "RelativePath": "api/Invoices/Invoices/my_invoices",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fromDate",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "toDate",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Invoices.InvoicesController",
+    "Method": "GetPaymentsByInvoice",
+    "RelativePath": "api/Invoices/Invoices/payments/{invoiceId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "invoiceId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Invoices.InvoicesController",
+    "Method": "RecordPayment",
+    "RelativePath": "api/Invoices/Invoices/Record_payment_for_invoice",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.PaymentRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Invoices.InvoicesController",
+    "Method": "UpdateInvoice",
+    "RelativePath": "api/Invoices/Invoices/Update_an_invoice/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.UpdateInvoiceRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.LaboratoriesController",
+    "Method": "GetAllLaboratories",
+    "RelativePath": "api/Laboratories",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.LaboratoriesController",
+    "Method": "CreateLaboratory",
+    "RelativePath": "api/Laboratories",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.LaboratoryCreateDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.LaboratoriesController",
+    "Method": "GetLaboratoryById",
+    "RelativePath": "api/Laboratories/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.LaboratoriesController",
+    "Method": "UpdateLaboratory",
+    "RelativePath": "api/Laboratories/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.LaboratoryUpdateDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.LaboratoriesController",
+    "Method": "DeleteLaboratory",
+    "RelativePath": "api/Laboratories/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.LaboratoriesController",
+    "Method": "GetMyLaboratoryProfile",
+    "RelativePath": "api/Laboratories/me",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.LaboratoriesController",
+    "Method": "GetLaboratoryByUserId",
+    "RelativePath": "api/Laboratories/user/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.LabRequestsController",
+    "Method": "CreateLabRequest",
+    "RelativePath": "api/LabRequests",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.LabRequestCreateDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.LabRequestsController",
+    "Method": "GetLabRequestById",
+    "RelativePath": "api/LabRequests/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.LabRequestsController",
+    "Method": "UpdateLabRequest",
+    "RelativePath": "api/LabRequests/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.LabRequestUpdateDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.LabRequestsController",
+    "Method": "GetLabRequestsByDoctor",
+    "RelativePath": "api/LabRequests/doctor/{doctorId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "doctorId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.LabRequestsController",
+    "Method": "GetLabRequestsByLaboratory",
+    "RelativePath": "api/LabRequests/laboratory/{laboratoryId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "laboratoryId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.LabRequestsController",
+    "Method": "GetLabRequestsByPatient",
+    "RelativePath": "api/LabRequests/patient/{patientId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "patientId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.LabRequestsController",
+    "Method": "GetPendingLabRequests",
+    "RelativePath": "api/LabRequests/pending",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Patients.PatientsController",
+    "Method": "AdminResetPassword",
+    "RelativePath": "api/Patients/Patients/Admin_reset_password/{userId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.AdminResetPasswordRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Patients.PatientsController",
+    "Method": "CreatePatient",
+    "RelativePath": "api/Patients/Patients/Create_a_new_patient",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.PatientRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Patients.PatientsController",
+    "Method": "CreateCase",
+    "RelativePath": "api/Patients/Patients/Create_new_treatment_case",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.TreatmentCaseRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Patients.PatientsController",
+    "Method": "GetAllPatients",
+    "RelativePath": "api/Patients/Patients/Get_all_patients",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Patients.PatientsController",
+    "Method": "GetPatientById",
+    "RelativePath": "api/Patients/Patients/Get_patient_by_ID/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Patients.PatientsController",
+    "Method": "GetPatientsByBranch",
+    "RelativePath": "api/Patients/Patients/Get_patients_by_branch/{branchId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "branchId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Patients.PatientsController",
+    "Method": "SearchPatients",
+    "RelativePath": "api/Patients/Patients/Search_patients",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "searchTerm",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Patients.PatientsController",
+    "Method": "UpdatePatient",
+    "RelativePath": "api/Patients/Patients/Update_a_patient/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.PatientRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.ServicesController",
+    "Method": "GetAllServices",
+    "RelativePath": "api/Services",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.ServicesController",
+    "Method": "CreateService",
+    "RelativePath": "api/Services",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.ServiceRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.ServicesController",
+    "Method": "GetServiceById",
+    "RelativePath": "api/Services/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.ServicesController",
+    "Method": "UpdateService",
+    "RelativePath": "api/Services/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.ServiceRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.ServicesController",
+    "Method": "DeleteService",
+    "RelativePath": "api/Services/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.ServicesController",
+    "Method": "GetActiveServices",
+    "RelativePath": "api/Services/active",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.Controllers.ServicesController",
+    "Method": "GetServicesByCategory",
+    "RelativePath": "api/Services/category/{category}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "category",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.TreatmentCaseService.TreatmentCaseController",
+    "Method": "GetCaseById",
+    "RelativePath": "api/TreatmentCaseService/TreatmentCase/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.TreatmentCaseService.TreatmentCaseController",
+    "Method": "GetCaseDetails",
+    "RelativePath": "api/TreatmentCaseService/TreatmentCase/{id}/details",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.TreatmentCaseService.TreatmentCaseController",
+    "Method": "AddDoctorToCase",
+    "RelativePath": "api/TreatmentCaseService/TreatmentCase/add-doctor-to-case/{caseId}/{doctorId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "caseId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "doctorId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.TreatmentCaseService.TreatmentCaseController",
+    "Method": "CreateTreatmentCase",
+    "RelativePath": "api/TreatmentCaseService/TreatmentCase/create-treatment-case",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.TreatmentCaseRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.TreatmentCaseService.TreatmentCaseController",
+    "Method": "DeleteTreatmentCase",
+    "RelativePath": "api/TreatmentCaseService/TreatmentCase/delete-treatment-case/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.TreatmentCaseService.TreatmentCaseController",
+    "Method": "GetMyCasesWithPatient",
+    "RelativePath": "api/TreatmentCaseService/TreatmentCase/Doctor-Cases-ByPatient/{patientId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "patientId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.TreatmentCaseService.TreatmentCaseController",
+    "Method": "GetCasesByDoctorAndPatient",
+    "RelativePath": "api/TreatmentCaseService/TreatmentCase/doctor/{doctorId}/patient/{patientId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "doctorId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "patientId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.TreatmentCaseService.TreatmentCaseController",
+    "Method": "GetMyStatistics",
+    "RelativePath": "api/TreatmentCaseService/TreatmentCase/Get_case_statistics_for_doctor",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.TreatmentCaseService.TreatmentCaseController",
+    "Method": "GetCasesByPatient",
+    "RelativePath": "api/TreatmentCaseService/TreatmentCase/Get_cases_by_patient/{patientId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "patientId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.TreatmentCaseService.TreatmentCaseController",
+    "Method": "GetInProgressCases",
+    "RelativePath": "api/TreatmentCaseService/TreatmentCase/Get_cases_in_progress",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.TreatmentCaseService.TreatmentCaseController",
+    "Method": "GetMyCases",
+    "RelativePath": "api/TreatmentCaseService/TreatmentCase/my-treatment-cases",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.TreatmentCaseService.TreatmentCaseController",
+    "Method": "RemoveDoctorFromCase",
+    "RelativePath": "api/TreatmentCaseService/TreatmentCase/remove-doctor-from-case/{caseId}/{doctorId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "caseId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "doctorId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.TreatmentCaseService.TreatmentCaseController",
+    "Method": "GetUpcomingVisits",
+    "RelativePath": "api/TreatmentCaseService/TreatmentCase/upcoming-visits",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fromDate",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "toDate",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.TreatmentCaseService.TreatmentCaseController",
+    "Method": "UpdateCaseStatus",
+    "RelativePath": "api/TreatmentCaseService/TreatmentCase/Update_case_status/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.UpdateCaseStatusDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

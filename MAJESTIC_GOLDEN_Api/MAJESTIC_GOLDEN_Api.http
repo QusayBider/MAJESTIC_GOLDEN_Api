@@ -1,0 +1,6 @@
+@MAJESTIC_GOLDEN_Api_HostAddress = http://localhost:5290
+
+GET {{MAJESTIC_GOLDEN_Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
