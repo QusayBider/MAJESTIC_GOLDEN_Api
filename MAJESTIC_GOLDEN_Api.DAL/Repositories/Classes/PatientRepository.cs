@@ -1,6 +1,7 @@
 using MAJESTIC_GOLDEN_Api.DAL.Data;
 using MAJESTIC_GOLDEN_Api.DAL.Models;
 using MAJESTIC_GOLDEN_Api.DAL.Repositories.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace MAJESTIC_GOLDEN_Api.DAL.Repositories.Classes
@@ -71,6 +72,8 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Repositories.Classes
                 .AsNoTracking()
                 .ToListAsync();
         }
+
+       
     }
 }
 

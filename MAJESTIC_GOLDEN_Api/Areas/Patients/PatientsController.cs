@@ -130,7 +130,6 @@ namespace MAJESTIC_GOLDEN_Api.PLL.Areas.Patients
             {
                 var doctorId = GetCurrentDoctorId();
 
-                // Clean up empty or null doctor IDs from the list
                 if (request.DoctorIds != null)
                 {
                     request.DoctorIds = request.DoctorIds
@@ -138,14 +137,12 @@ namespace MAJESTIC_GOLDEN_Api.PLL.Areas.Patients
                         .ToList();
                 }
 
-                // Add current doctor to the case doctors list automatically if not present
                 if (request.DoctorIds == null || !request.DoctorIds.Any())
                 {
                     request.DoctorIds = new List<string> { doctorId };
                 }
                 else if (!request.DoctorIds.Contains(doctorId))
                 {
-                    // Make sure current doctor is in the list
                     request.DoctorIds.Insert(0, doctorId);
                 }
 
@@ -165,6 +162,127 @@ namespace MAJESTIC_GOLDEN_Api.PLL.Areas.Patients
                     Success = false,
                     Message_En = "Failed to create case",
                     Message_Ar = "فشل في إنشاء الحالة",
+                    Errors = new List<string> { ex.Message }
+                });
+            }
+        }
+
+        [HttpPost("UploadFilePatient/{patient_Id}")]
+        [Authorize(Roles = "HeadDoctor,SubDoctor,Receptionist,Patients_Admin,Laboratory")]
+        public async Task<IActionResult> UploadFilePatient(string patient_Id, [FromForm] UploadFileRequestDTO request)
+        {
+            try
+            {
+                if (request.File == null || request.File.Length == 0)
+                {
+                    return BadRequest(new ApiResponse<object>
+                    {
+                        Success = false,
+                        Message_En = "File is required",
+                        Message_Ar = "الملف مطلوب"
+                    });
+                }
+
+                var uploadedBy = GetCurrentDoctorId();
+
+                
+                var result = await _patientService.UploadFileToPatientAsync(patient_Id, request.File, request, uploadedBy);
+
+                return result.Success ? Ok(result) : BadRequest(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ApiResponse<object>
+                {
+                    Success = false,
+                    Message_En = "Failed to upload file",
+                    Message_Ar = "فشل في رفع الملف",
+                    Errors = new List<string> { ex.Message }
+                });
+            }
+        }
+
+        [HttpDelete("DeleteFilePatient/{file_Id}")]
+        [Authorize(Roles = "HeadDoctor,SubDoctor,Receptionist,Patients_Admin,Laboratory")]
+        public async Task<IActionResult> DeleteFilePatient(int file_Id)
+        {
+            try
+            {
+                var deletedBy = GetCurrentDoctorId();
+                var result = await _patientService.DeleteFileAsync(file_Id, deletedBy);
+                return result.Success ? Ok(result) : BadRequest(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ApiResponse<object>
+                {
+                    Success = false,
+                    Message_En = "Failed to delete file",
+                    Message_Ar = "فشل في حذف الملف",
+                    Errors = new List<string> { ex.Message }
+                });
+            }
+        }
+
+        [HttpGet("GetPatientFiles/{patient_Id}")]
+        [Authorize(Roles = "HeadDoctor,SubDoctor,Receptionist,Patients_Admin,Laboratory,Patient")]
+        public async Task<IActionResult> GetPatientFiles(string patient_Id)
+        {
+            try
+            {
+                var userRole = User.FindFirst(ClaimTypes.Role)?.Value;
+                if (userRole == "Patient")
+                {
+                    var currentPatientId = User.FindFirst("PatientId")?.Value ?? "";
+                    if (currentPatientId != patient_Id)
+                    {
+                        return Forbid();
+                    }
+                }
+                
+
+                var result = await _patientService.GetPatientFilesAsync(Request, patient_Id);
+                return result.Success ? Ok(result) : BadRequest(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ApiResponse<object>
+                {
+                    Success = false,
+                    Message_En = "Failed to retrieve files",
+                    Message_Ar = "فشل في استرجاع الملفات",
+                    Errors = new List<string> { ex.Message }
+                });
+            }
+        }
+
+        [HttpGet("GetFileById/{file_Id}")]
+        [Authorize(Roles = "HeadDoctor,SubDoctor,Receptionist,Patients_Admin,Laboratory,Patient")]
+        public async Task<IActionResult> GetFileById(int file_Id)
+        {
+            try
+            {
+                var result = await _patientService.GetFileByIdAsync(Request, file_Id);
+                
+                var userRole = User.FindFirst(ClaimTypes.Role)?.Value;
+                if (userRole == "Patient" && result.Success && result.Data != null)
+                {
+                    var currentPatientId = User.FindFirst("PatientId")?.Value ?? "";
+                    if (currentPatientId != result.Data.PatientUserId)
+                    {
+                        return Forbid();
+                    }
+                }
+
+                return result.Success ? Ok(result) : BadRequest(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ApiResponse<object>
+                {
+                    Success = false,
+                    Message_En = "Failed to retrieve file",
+                    Message_Ar = "فشل في استرجاع الملف",
                     Errors = new List<string> { ex.Message }
                 });
             }

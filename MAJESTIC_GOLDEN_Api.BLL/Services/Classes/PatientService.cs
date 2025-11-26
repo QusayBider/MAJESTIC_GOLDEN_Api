@@ -1,24 +1,32 @@
 using AutoMapper;
+using Azure.Core;
+using MAJESTIC_GOLDEN_Api.BLL.Services.Interfaces;
 using MAJESTIC_GOLDEN_Api.DAL.DTO.Requests;
 using MAJESTIC_GOLDEN_Api.DAL.DTO.Responses;
+using MAJESTIC_GOLDEN_Api.DAL.Enums;
 using MAJESTIC_GOLDEN_Api.DAL.Models;
 using MAJESTIC_GOLDEN_Api.DAL.Repositories.Interfaces;
-using MAJESTIC_GOLDEN_Api.BLL.Services.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using MAJESTIC_GOLDEN_Api.DAL.Enums;
+using System.IO;
+using System.Net.Mail;
 
 namespace MAJESTIC_GOLDEN_Api.BLL.Services.Classes
 {
     public class PatientService : IPatientService
     {
         private readonly IPatientRepository _patientRepository;
+        private readonly IFileRepository _fileRepository;
+        private readonly IFileService _fileService;
         private readonly IMapper _mapper;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IAuditLogger _auditLogger;
 
-        public PatientService(IPatientRepository patientRepository, IMapper mapper, UserManager<ApplicationUser> userManager, IAuditLogger auditLogger)
+        public PatientService(IPatientRepository patientRepository, IFileRepository fileRepository, IFileService fileService, IMapper mapper, UserManager<ApplicationUser> userManager, IAuditLogger auditLogger)
         {
             _patientRepository = patientRepository;
+            _fileRepository = fileRepository;
+            _fileService = fileService;
             _mapper = mapper;
             _userManager = userManager;
             _auditLogger = auditLogger;
@@ -29,7 +37,6 @@ namespace MAJESTIC_GOLDEN_Api.BLL.Services.Classes
             try
             {
 
-                // Check if email is provided and already exists
                 if (!string.IsNullOrEmpty(request.Email))
                 {
                     var existingUser = await _userManager.FindByEmailAsync(request.Email);
@@ -42,16 +49,13 @@ namespace MAJESTIC_GOLDEN_Api.BLL.Services.Classes
                     }
                 }
 
-                // Parse gender from string to enum
                 Gender gender;
                 if (!Enum.TryParse<Gender>(request.Gender, true, out gender))
                 {
-                    gender = Gender.Male; // Default to Male if parsing fails
+                    gender = Gender.Male; 
                 }
 
-                // Create ApplicationUser first
-                // Generate unique username by appending timestamp to phone number
-                // This allows multiple users to have the same phone number
+                
                 var uniqueUsername = $"{request.Phone}_{DateTime.UtcNow:yyyyMMddHHmmss}";
                 
                 var user = new ApplicationUser
@@ -68,12 +72,12 @@ namespace MAJESTIC_GOLDEN_Api.BLL.Services.Classes
                     Occupation_En = request.Occupation_En,
                     Occupation_Ar = request.Occupation_Ar,
                     BranchId = request.BranchId,
-                    EmailConfirmed = true, // Email not confirmed by default
+                    EmailConfirmed = true, 
                     IsActive = true,
                     CreatedAt = DateTime.UtcNow
                 };
 
-                // Parse marital status if provided
+               
                 if (!string.IsNullOrEmpty(request.MaritalStatus_En))
                 {
                     MaritalStatus maritalStatus;
@@ -83,8 +87,7 @@ namespace MAJESTIC_GOLDEN_Api.BLL.Services.Classes
                     }
                 }
 
-                // Create user with a default password (you might want to generate a random one or handle this differently)
-                var defaultPassword = $"Patient@{request.Phone}"; // Default password format
+                var defaultPassword = $"Patient@{request.Phone}"; 
                 var createUserResult = await _userManager.CreateAsync(user, defaultPassword);
 
                 if (!createUserResult.Succeeded)
@@ -96,11 +99,7 @@ namespace MAJESTIC_GOLDEN_Api.BLL.Services.Classes
                         errors
                     );
                 }
-
-                // Add user to Patient role
                 await _userManager.AddToRoleAsync(user, "Patient");
-
-                // Create Patient record linked to the user
                 var patient = new Patient
                 {
                     UserId = user.Id,
@@ -114,8 +113,6 @@ namespace MAJESTIC_GOLDEN_Api.BLL.Services.Classes
                 };
 
                 await _patientRepository.AddAsync(patient);
-
-                // Get the patient with full details for response
                 var createdPatient = await _patientRepository.GetPatientWithDetailsAsync(user.Id);
                 var response = _mapper.Map<PatientResponseDTO>(createdPatient);
                 
@@ -139,7 +136,6 @@ namespace MAJESTIC_GOLDEN_Api.BLL.Services.Classes
         {
             try
             {
-                // Use GetPatientForUpdateAsync which includes tracking (no AsNoTracking)
                 var patient = await _patientRepository.GetPatientForUpdateAsync(userId);
                 if (patient == null)
                 {
@@ -149,8 +145,6 @@ namespace MAJESTIC_GOLDEN_Api.BLL.Services.Classes
                     );
                 }
 
-                // Update ApplicationUser information
-                // Use patient.User directly - it's already tracked by the context
                 var user = patient.User;
                 if (user == null)
                 {
@@ -162,14 +156,12 @@ namespace MAJESTIC_GOLDEN_Api.BLL.Services.Classes
 
                 var oldValues = _mapper.Map<PatientResponseDTO>(patient);
 
-                // Parse gender from string to enum
                 Gender gender;
                 if (Enum.TryParse<Gender>(request.Gender, true, out gender))
                 {
                     user.Gender = gender;
                 }
 
-                // Update user fields
                 user.FullName_En = request.FullName_En;
                 user.FullName_Ar = request.FullName_Ar;
                 user.PhoneNumber = request.Phone;
@@ -181,7 +173,6 @@ namespace MAJESTIC_GOLDEN_Api.BLL.Services.Classes
                 user.Occupation_Ar = request.Occupation_Ar;
                 user.BranchId = request.BranchId;
 
-                // Parse marital status if provided
                 if (!string.IsNullOrEmpty(request.MaritalStatus_En))
                 {
                     MaritalStatus maritalStatus;
@@ -193,7 +184,6 @@ namespace MAJESTIC_GOLDEN_Api.BLL.Services.Classes
 
                 await _userManager.UpdateAsync(user);
 
-                // Update Patient-specific information
                 patient.TreatmentPlan_En = request.TreatmentPlan_En;
                 patient.TreatmentPlan_Ar = request.TreatmentPlan_Ar;
                 patient.MedicalHistory_En = request.MedicalHistory_En;
@@ -203,7 +193,6 @@ namespace MAJESTIC_GOLDEN_Api.BLL.Services.Classes
 
                 await _patientRepository.UpdateAsync(patient);
 
-                // Get updated patient with details
                 var updatedPatient = await _patientRepository.GetPatientWithDetailsAsync(userId);
                 var response = _mapper.Map<PatientResponseDTO>(updatedPatient);
 
@@ -421,6 +410,239 @@ namespace MAJESTIC_GOLDEN_Api.BLL.Services.Classes
                 return ApiResponse<bool>.ErrorResponse(
                     "Failed to reset password",
                     "فشل في إعادة تعيين كلمة المرور",
+                    new List<string> { ex.Message }
+                );
+            }
+        }
+
+        public async Task<ApiResponse<UploadFileResponseDTO>> UploadFileToPatientAsync(string patientUserId, IFormFile file, UploadFileRequestDTO request, string? uploadedById = null)
+        {
+            try
+            {
+                var patient = await _patientRepository.GetPatientWithDetailsAsync(patientUserId);
+                if (patient == null)
+                {
+                    return ApiResponse<UploadFileResponseDTO>.ErrorResponse(
+                        "Patient not found",
+                        "المريض غير موجود"
+                    );
+                }
+
+                if (file == null || file.Length == 0)
+                {
+                    return ApiResponse<UploadFileResponseDTO>.ErrorResponse(
+                        "File is required and cannot be empty",
+                        "الملف مطلوب ولا يمكن أن يكون فارغًا"
+                    );
+                }
+
+                var fileName = await _fileService.UploadFileAsync(file);
+
+                var fileUrl = "";
+                var fileType = file.ContentType ?? "application/octet-stream";
+                
+                var attachment = new PatientAttachment
+                {
+                    PatientUserId = patientUserId,
+                    FileName = fileName,
+                    FileUrl = fileUrl,
+                    FileType = fileType,
+                    Description_En = request?.Description_En,
+                    Description_Ar = request?.Description_Ar,
+                    UploadDate = DateTime.UtcNow,
+                    UploadedBy = uploadedById
+                };
+                var uploadedUser = await _userManager.FindByIdAsync(uploadedById);
+                attachment.UploadedBy = uploadedUser.FullName != null ? uploadedUser.FullName : "System";
+                await _fileRepository.AddAsync(attachment);
+
+                var result = new UploadFileResponseDTO
+                {
+                    Id = attachment.Id,
+                    PatientUserId = attachment.PatientUserId,
+                    FileName = attachment.FileName,
+                    FileUrl = attachment.FileUrl,
+                    FileType = attachment.FileType,
+                    Description_En = attachment.Description_En,
+                    Description_Ar = attachment.Description_Ar,
+                    UploadDate = attachment.UploadDate,
+                    UploadedBy = attachment.UploadedBy,
+                    CreatedAt = attachment.CreatedAt,
+                    UpdatedAt = attachment.UpdatedAt
+                };
+
+                await _auditLogger.LogAsync(
+                    "Upload",
+                    nameof(PatientAttachment),
+                    attachment.Id.ToString(),
+                    userId: uploadedById,
+                    userName: attachment.UploadedBy,
+                    newValues: result);
+
+                return ApiResponse<UploadFileResponseDTO>.SuccessResponse(
+                    result,
+                    "File uploaded successfully",
+                    "تم رفع الملف بنجاح"
+                );
+            }
+            catch (Exception ex)
+            {
+                return ApiResponse<UploadFileResponseDTO>.ErrorResponse(
+                    "Failed to upload file",
+                    "فشل في رفع الملف",
+                    new List<string> { ex.Message }
+                );
+            }
+        }
+
+        public async Task<ApiResponse<bool>> DeleteFileAsync(int fileId, string? deletedById = null)
+        {
+            try
+            {
+                var attachment = await _fileRepository.GetByIdAsync(fileId);
+                if (attachment == null)
+                {
+                    return ApiResponse<bool>.ErrorResponse(
+                        "File not found",
+                        "الملف غير موجود"
+                    );
+                }
+
+                var oldValues = new
+                {
+                    Id = attachment.Id,
+                    PatientUserId = attachment.PatientUserId,
+                    FileName = attachment.FileName,
+                    FileUrl = attachment.FileUrl,
+                    FileType = attachment.FileType,
+                    Description_En = attachment.Description_En,
+                    Description_Ar = attachment.Description_Ar,
+                    UploadDate = attachment.UploadDate,
+                    UploadedBy = attachment.UploadedBy
+                };
+                
+                var fileName = attachment.FileName;
+                if (fileName.StartsWith("/Files/"))
+                {
+                    fileName = fileName.Substring("/Files/".Length);
+                }
+                if (!string.IsNullOrEmpty(fileName))
+                {
+                    _fileService.DeleteFileAsync(fileName);
+                }
+
+                
+                await _fileRepository.RemoveAsync(attachment);
+                var UserDeleted = await _userManager.FindByIdAsync(deletedById);
+                await _auditLogger.LogAsync(
+                    "Delete",
+                    nameof(PatientAttachment),
+                    fileId.ToString(),
+                    userId: deletedById ?? attachment.UploadedBy,
+                    userName: UserDeleted != null ? UserDeleted.FullName : "System",
+                    oldValues: oldValues);
+
+                return ApiResponse<bool>.SuccessResponse(
+                    true,
+                    "File deleted successfully",
+                    "تم حذف الملف بنجاح"
+                );
+            }
+            catch (Exception ex)
+            {
+                return ApiResponse<bool>.ErrorResponse(
+                    "Failed to delete file",
+                    "فشل في حذف الملف",
+                    new List<string> { ex.Message }
+                );
+            }
+        }
+
+        public async Task<ApiResponse<IEnumerable<UploadFileResponseDTO>>> GetPatientFilesAsync(HttpRequest request ,string patientUserId)
+        {
+            try
+            {
+                var patient = await _patientRepository.GetPatientWithDetailsAsync(patientUserId);
+                if (patient == null)
+                {
+                    return ApiResponse<IEnumerable<UploadFileResponseDTO>>.ErrorResponse(
+                        "Patient not found",
+                        "المريض غير موجود"
+                    );
+                }
+
+                var attachments = await _fileRepository.FindAsync(a => a.PatientUserId == patientUserId);
+
+                var result = attachments.Select(a => new UploadFileResponseDTO
+                {
+                    Id = a.Id,
+                    PatientUserId = a.PatientUserId,
+                    FileName = a.FileName, 
+                    FileUrl = $"{request.Scheme}://{request.Host}/Files/{a.FileName}", 
+                    FileType = a.FileType,
+                    Description_En = a.Description_En,
+                    Description_Ar = a.Description_Ar,
+                    UploadDate = a.UploadDate,
+                    UploadedBy = a.UploadedBy,
+                    CreatedAt = a.CreatedAt,
+                    UpdatedAt = a.UpdatedAt
+                }).ToList();
+
+                return ApiResponse<IEnumerable<UploadFileResponseDTO>>.SuccessResponse(
+                    result,
+                    "Files retrieved successfully",
+                    "تم استرجاع الملفات بنجاح"
+                );
+            }
+            catch (Exception ex)
+            {
+                return ApiResponse<IEnumerable<UploadFileResponseDTO>>.ErrorResponse(
+                    "Failed to retrieve files",
+                    "فشل في استرجاع الملفات",
+                    new List<string> { ex.Message }
+                );
+            }
+        }
+
+        public async Task<ApiResponse<UploadFileResponseDTO>> GetFileByIdAsync(HttpRequest request, int fileId)
+        {
+            try
+            {
+                var attachment = await _fileRepository.GetByIdAsync(fileId);
+                if (attachment == null)
+                {
+                    return ApiResponse<UploadFileResponseDTO>.ErrorResponse(
+                        "File not found",
+                        "الملف غير موجود"
+                    );
+                }
+
+                var result = new UploadFileResponseDTO
+                {
+                    Id = attachment.Id,
+                    PatientUserId = attachment.PatientUserId,
+                    FileName = attachment.FileName, 
+                    FileUrl = $"{request.Scheme}://{request.Host}/Files/{attachment.FileName}", 
+                    FileType = attachment.FileType,
+                    Description_En = attachment.Description_En,
+                    Description_Ar = attachment.Description_Ar,
+                    UploadDate = attachment.UploadDate,
+                    UploadedBy = attachment.UploadedBy,
+                    CreatedAt = attachment.CreatedAt,
+                    UpdatedAt = attachment.UpdatedAt
+                };
+
+                return ApiResponse<UploadFileResponseDTO>.SuccessResponse(
+                    result,
+                    "File retrieved successfully",
+                    "تم استرجاع الملف بنجاح"
+                );
+            }
+            catch (Exception ex)
+            {
+                return ApiResponse<UploadFileResponseDTO>.ErrorResponse(
+                    "Failed to retrieve file",
+                    "فشل في استرجاع الملف",
                     new List<string> { ex.Message }
                 );
             }

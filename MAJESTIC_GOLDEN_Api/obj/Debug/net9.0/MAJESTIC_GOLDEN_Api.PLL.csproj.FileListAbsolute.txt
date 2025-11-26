@@ -259,7 +259,6 @@ C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Deb
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\Microsoft.OpenApi.dll
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
-C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\Mono.TextTemplating.dll
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\Scalar.AspNetCore.dll
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
@@ -273,13 +272,10 @@ C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Deb
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\System.Composition.Runtime.dll
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\System.Composition.TypedParts.dll
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
-C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\System.Drawing.Common.dll
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\System.Memory.Data.dll
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\System.Runtime.Caching.dll
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\System.Security.Permissions.dll
-C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\System.Windows.Extensions.dll
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
@@ -351,12 +347,7 @@ C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Deb
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
-C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\MAJESTIC_GOLDEN_Api.BLL.dll
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\MAJESTIC_GOLDEN_Api.DAL.dll
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\MAJESTIC_GOLDEN_Api.BLL.pdb
@@ -389,3 +380,7 @@ C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\obj\Deb
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\obj\Debug\net9.0\MAJESTIC_GOLDEN_Api.PLL.genruntimeconfig.cache
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\obj\Debug\net9.0\ref\MAJESTIC_GOLDEN_Api.PLL.dll
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\obj\Debug\net9.0\MAJESTIC_GOLDEN_Api.PLL.sourcelink.json
+C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\MAJESTIC_GOLDEN_Api.PLL.staticwebassets.runtime.json
+C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\Newtonsoft.Json.dll
+C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api\bin\Debug\net9.0\Stripe.net.dll

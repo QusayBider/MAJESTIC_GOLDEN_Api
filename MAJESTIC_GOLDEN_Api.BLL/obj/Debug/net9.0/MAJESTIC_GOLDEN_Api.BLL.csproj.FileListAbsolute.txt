@@ -29,3 +29,4 @@ C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api.BLL\obj
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api.BLL\obj\Debug\net9.0\refint\MAJESTIC_GOLDEN_Api.BLL.dll
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api.BLL\obj\Debug\net9.0\MAJESTIC_GOLDEN_Api.BLL.pdb
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api.BLL\obj\Debug\net9.0\ref\MAJESTIC_GOLDEN_Api.BLL.dll
+C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api.BLL\obj\Debug\net9.0\MAJESTIC_GOLDEN_Api.BLL.sourcelink.json

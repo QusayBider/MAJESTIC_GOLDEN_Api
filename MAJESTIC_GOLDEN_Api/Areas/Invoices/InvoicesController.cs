@@ -160,12 +160,19 @@ namespace MAJESTIC_GOLDEN_Api.PLL.Areas.Invoices
         }
 
         [HttpGet("GetInvoiceByID/{id}")]
-        [Authorize(Roles = "HeadDoctor,Receptionist,Invoices_Admin,SubDoctor")]
+        [Authorize(Roles = "HeadDoctor,Receptionist,Invoices_Admin,SubDoctor,Patient")]
         public async Task<IActionResult> GetInvoiceByID(int id)
         {
             var userRole = User.FindFirst(ClaimTypes.Role)?.Value;
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "";
             var result = await _invoiceService.GetInvoiceByIdAsync(id);
+            if (userRole == "Patient" && result.Data.PatientUserId != userId)
+            {
+                return BadRequest(ApiResponse<InvoiceResponseDTO>.ErrorResponse(
+                            "You are not authorized to view this invoice",
+                            "أنت غير مخول بمشاهدة هذه الفاتورة"
+                        ));
+            }
             if (userRole == "SubDoctor" && result.Data.DoctorId != userId) { 
                 return BadRequest(ApiResponse<InvoiceResponseDTO>.ErrorResponse(
                         "You are not authorized to view this invoice",

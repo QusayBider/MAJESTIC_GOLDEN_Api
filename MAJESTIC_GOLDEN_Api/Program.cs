@@ -27,17 +27,13 @@ namespace MAJESTIC_GOLDEN_Api
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
             builder.Services.AddControllers();
 
-            // Database Context
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-            // Identity
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {
-                // Password settings
                 options.Password.RequireDigit = true;
                 options.Password.RequiredLength = 6;
                 options.Password.RequireNonAlphanumeric = false;
@@ -52,10 +48,8 @@ namespace MAJESTIC_GOLDEN_Api
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
 
-            // AutoMapper
             builder.Services.AddAutoMapper(typeof(MappingProfile));
 
-            // Localization
             builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
             builder.Services.Configure<RequestLocalizationOptions>(options =>
             {
@@ -81,6 +75,7 @@ namespace MAJESTIC_GOLDEN_Api
             builder.Services.AddScoped<ITreatmentCaseRepository, TreatmentCaseRepository>();
             builder.Services.AddScoped<ILaboratoryRepository, LaboratoryRepository>();
             builder.Services.AddScoped<IAuditLogRepository, AuditLogRepository>();
+            builder.Services.AddScoped<IFileRepository, FileRepository>();
 
             // Services
             builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
@@ -96,12 +91,14 @@ namespace MAJESTIC_GOLDEN_Api
             builder.Services.AddScoped<ITreatmentCaseService, TreatmentCaseService>();
             builder.Services.AddScoped<ILaboratoryService, LaboratoryService>();
             builder.Services.AddScoped<IAuditLogger, AuditLogger>();
+            builder.Services.AddScoped<IFileService, FileService>();
+            builder.Services.AddScoped<ICheckOutService, CheckOutService>();
 
-            // Utilities
+            builder.Services.AddScoped<IFileRepository, FileRepository>();
+
             builder.Services.AddScoped<ISeedData, SeedData>();
             builder.Services.AddScoped<IEmailSender, EmailSender>();
 
-            // CORS
             var corsPolicy = "DentalClinicPolicy";
             builder.Services.AddCors(option =>
             {
@@ -181,7 +178,6 @@ namespace MAJESTIC_GOLDEN_Api
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.MapOpenApi();
@@ -193,7 +189,6 @@ namespace MAJESTIC_GOLDEN_Api
                 });
             }
 
-            // Seed data
             using (var scope = app.Services.CreateScope())
             {
                 var seedData = scope.ServiceProvider.GetRequiredService<ISeedData>();
@@ -201,11 +196,10 @@ namespace MAJESTIC_GOLDEN_Api
                 await seedData.DataSeedingAsync();
             }
 
-            // Middleware pipeline
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            // Localization
+
             var localizationOptions = app.Services.GetService<Microsoft.Extensions.Options.IOptions<RequestLocalizationOptions>>();
             if (localizationOptions != null)
             {

@@ -1505,6 +1505,22 @@
   },
   {
     "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Patients.PatientsController",
+    "Method": "DeleteFilePatient",
+    "RelativePath": "api/Patients/Patients/DeleteFilePatient/{file_Id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file_Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Patients.PatientsController",
     "Method": "GetAllPatients",
     "RelativePath": "api/Patients/Patients/Get_all_patients",
     "HttpMethod": "GET",
@@ -1547,6 +1563,38 @@
   },
   {
     "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Patients.PatientsController",
+    "Method": "GetFileById",
+    "RelativePath": "api/Patients/Patients/GetFileById/{file_Id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file_Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Patients.PatientsController",
+    "Method": "GetPatientFiles",
+    "RelativePath": "api/Patients/Patients/GetPatientFiles/{patient_Id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "patient_Id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Patients.PatientsController",
     "Method": "SearchPatients",
     "RelativePath": "api/Patients/Patients/Search_patients",
     "HttpMethod": "GET",
@@ -1578,6 +1626,90 @@
         "Name": "request",
         "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.PatientRequestDTO",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Patients.PatientsController",
+    "Method": "UploadFilePatient",
+    "RelativePath": "api/Patients/Patients/UploadFilePatient/{patient_Id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "patient_Id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "File",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description_En",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description_Ar",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Payment.CheckOutController",
+    "Method": "PaymentCancel",
+    "RelativePath": "api/Payment/CheckOut/cancel",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "invoiceId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Payment.CheckOutController",
+    "Method": "ProcessPayment",
+    "RelativePath": "api/Payment/CheckOut/process",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MAJESTIC_GOLDEN_Api.DAL.DTO.Requests.CheckOutDTORequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Payment.CheckOutController",
+    "Method": "PaymentSuccess",
+    "RelativePath": "api/Payment/CheckOut/success",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "session_id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "invoiceId",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

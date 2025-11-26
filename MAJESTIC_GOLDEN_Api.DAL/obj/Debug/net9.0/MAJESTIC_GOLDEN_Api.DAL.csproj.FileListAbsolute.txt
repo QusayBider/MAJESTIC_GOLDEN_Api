@@ -23,3 +23,4 @@ C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api.DAL\obj
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api.DAL\obj\Debug\net9.0\refint\MAJESTIC_GOLDEN_Api.DAL.dll
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api.DAL\obj\Debug\net9.0\MAJESTIC_GOLDEN_Api.DAL.pdb
 C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api.DAL\obj\Debug\net9.0\ref\MAJESTIC_GOLDEN_Api.DAL.dll
+C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api.DAL\obj\Debug\net9.0\MAJESTIC_GOLDEN_Api.DAL.sourcelink.json

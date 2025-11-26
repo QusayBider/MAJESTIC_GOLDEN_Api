@@ -61,6 +61,10 @@
             "Mapster": {
               "target": "Package",
               "version": "[7.4.0, )"
+            },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[50.0.0, )"
             }
           },
           "imports": [

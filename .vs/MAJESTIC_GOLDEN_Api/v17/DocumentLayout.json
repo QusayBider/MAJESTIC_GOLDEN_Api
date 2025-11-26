@@ -3,22 +3,25 @@
   "WorkspaceRootPath": "C:\\Users\\Qusay\\source\\repos\\MAJESTIC_GOLDEN_Api-main\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5FB33C36-3404-4A6F-88A9-1E346FB60B64}|MAJESTIC_GOLDEN_Api\\MAJESTIC_GOLDEN_Api.PLL.csproj|c:\\users\\qusay\\source\\repos\\majestic_golden_api-main\\majestic_golden_api\\controllers\\labrequestscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FB33C36-3404-4A6F-88A9-1E346FB60B64}|MAJESTIC_GOLDEN_Api\\MAJESTIC_GOLDEN_Api.PLL.csproj|solutionrelative:majestic_golden_api\\controllers\\labrequestscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AC48F0F4-678B-4D19-A641-68E1076E843B}|MAJESTIC_GOLDEN_Api.BLL\\MAJESTIC_GOLDEN_Api.BLL.csproj|c:\\users\\qusay\\source\\repos\\majestic_golden_api-main\\majestic_golden_api.bll\\services\\classes\\checkoutservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC48F0F4-678B-4D19-A641-68E1076E843B}|MAJESTIC_GOLDEN_Api.BLL\\MAJESTIC_GOLDEN_Api.BLL.csproj|solutionrelative:majestic_golden_api.bll\\services\\classes\\checkoutservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/./MAJESTIC_GOLDEN/True/SqlTable/dbo.AuditLogs.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9A15933C-E569-4CD9-8A10-24E44B075573}|MAJESTIC_GOLDEN_Api.DAL\\MAJESTIC_GOLDEN_Api.DAL.csproj|c:\\users\\qusay\\source\\repos\\majestic_golden_api-main\\majestic_golden_api.dal\\models\\labrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9A15933C-E569-4CD9-8A10-24E44B075573}|MAJESTIC_GOLDEN_Api.DAL\\MAJESTIC_GOLDEN_Api.DAL.csproj|solutionrelative:majestic_golden_api.dal\\models\\labrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/./MAJESTIC_GOLDEN/True/SqlTable/dbo.Payments.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AC48F0F4-678B-4D19-A641-68E1076E843B}|MAJESTIC_GOLDEN_Api.BLL\\MAJESTIC_GOLDEN_Api.BLL.csproj|c:\\users\\qusay\\source\\repos\\majestic_golden_api-main\\majestic_golden_api.bll\\mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC48F0F4-678B-4D19-A641-68E1076E843B}|MAJESTIC_GOLDEN_Api.BLL\\MAJESTIC_GOLDEN_Api.BLL.csproj|solutionrelative:majestic_golden_api.bll\\mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/./MAJESTIC_GOLDEN/True/SqlTable/dbo.Invoices.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/./MAJESTIC_GOLDEN/True/SqlTable/dbo.Users.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+      "AbsoluteMoniker": "D:0:0:{5FB33C36-3404-4A6F-88A9-1E346FB60B64}|MAJESTIC_GOLDEN_Api\\MAJESTIC_GOLDEN_Api.PLL.csproj|c:\\users\\qusay\\source\\repos\\majestic_golden_api-main\\majestic_golden_api\\areas\\invoices\\invoicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FB33C36-3404-4A6F-88A9-1E346FB60B64}|MAJESTIC_GOLDEN_Api\\MAJESTIC_GOLDEN_Api.PLL.csproj|solutionrelative:majestic_golden_api\\areas\\invoices\\invoicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FB33C36-3404-4A6F-88A9-1E346FB60B64}|MAJESTIC_GOLDEN_Api\\MAJESTIC_GOLDEN_Api.PLL.csproj|c:\\users\\qusay\\source\\repos\\majestic_golden_api-main\\majestic_golden_api\\areas\\payment\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FB33C36-3404-4A6F-88A9-1E346FB60B64}|MAJESTIC_GOLDEN_Api\\MAJESTIC_GOLDEN_Api.PLL.csproj|solutionrelative:majestic_golden_api\\areas\\payment\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -28,7 +31,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
@@ -37,46 +40,53 @@
               "DocumentMoniker": "ViewDataWindow_MSSQL__/./MAJESTIC_GOLDEN/True/SqlTable/dbo.AuditLogs.sql",
               "ToolTip": "dbo.AuditLogs [Data]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-11-24T14:55:35.504Z",
+              "WhenOpened": "2025-11-26T22:51:17.57Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "LabRequest.cs",
-              "DocumentMoniker": "C:\\Users\\Qusay\\source\\repos\\MAJESTIC_GOLDEN_Api-main\\MAJESTIC_GOLDEN_Api.DAL\\Models\\LabRequest.cs",
-              "RelativeDocumentMoniker": "MAJESTIC_GOLDEN_Api.DAL\\Models\\LabRequest.cs",
-              "ToolTip": "C:\\Users\\Qusay\\source\\repos\\MAJESTIC_GOLDEN_Api-main\\MAJESTIC_GOLDEN_Api.DAL\\Models\\LabRequest.cs",
-              "RelativeToolTip": "MAJESTIC_GOLDEN_Api.DAL\\Models\\LabRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA8AAAAAAAAAA==",
+              "Title": "dbo.Payments [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/./MAJESTIC_GOLDEN/True/SqlTable/dbo.Payments.sql",
+              "ToolTip": "dbo.Payments [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-11-26T22:51:08.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "InvoicesController.cs",
+              "DocumentMoniker": "C:\\Users\\Qusay\\source\\repos\\MAJESTIC_GOLDEN_Api-main\\MAJESTIC_GOLDEN_Api\\Areas\\Invoices\\InvoicesController.cs",
+              "RelativeDocumentMoniker": "MAJESTIC_GOLDEN_Api\\Areas\\Invoices\\InvoicesController.cs",
+              "ToolTip": "C:\\Users\\Qusay\\source\\repos\\MAJESTIC_GOLDEN_Api-main\\MAJESTIC_GOLDEN_Api\\Areas\\Invoices\\InvoicesController.cs",
+              "RelativeToolTip": "MAJESTIC_GOLDEN_Api\\Areas\\Invoices\\InvoicesController.cs",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAuwK4AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T14:54:51.547Z",
+              "WhenOpened": "2025-11-26T22:33:53.477Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "MappingProfile.cs",
-              "DocumentMoniker": "C:\\Users\\Qusay\\source\\repos\\MAJESTIC_GOLDEN_Api-main\\MAJESTIC_GOLDEN_Api.BLL\\Mapping\\MappingProfile.cs",
-              "RelativeDocumentMoniker": "MAJESTIC_GOLDEN_Api.BLL\\Mapping\\MappingProfile.cs",
-              "ToolTip": "C:\\Users\\Qusay\\source\\repos\\MAJESTIC_GOLDEN_Api-main\\MAJESTIC_GOLDEN_Api.BLL\\Mapping\\MappingProfile.cs",
-              "RelativeToolTip": "MAJESTIC_GOLDEN_Api.BLL\\Mapping\\MappingProfile.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T14:51:21.573Z",
+              "Title": "dbo.Invoices [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/./MAJESTIC_GOLDEN/True/SqlTable/dbo.Invoices.sql",
+              "ToolTip": "dbo.Invoices [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-11-26T22:30:29.076Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LabRequestsController.cs",
-              "DocumentMoniker": "C:\\Users\\Qusay\\source\\repos\\MAJESTIC_GOLDEN_Api-main\\MAJESTIC_GOLDEN_Api\\Controllers\\LabRequestsController.cs",
-              "RelativeDocumentMoniker": "MAJESTIC_GOLDEN_Api\\Controllers\\LabRequestsController.cs",
-              "ToolTip": "C:\\Users\\Qusay\\source\\repos\\MAJESTIC_GOLDEN_Api-main\\MAJESTIC_GOLDEN_Api\\Controllers\\LabRequestsController.cs",
-              "RelativeToolTip": "MAJESTIC_GOLDEN_Api\\Controllers\\LabRequestsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAPAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "CheckOutController.cs",
+              "DocumentMoniker": "C:\\Users\\Qusay\\source\\repos\\MAJESTIC_GOLDEN_Api-main\\MAJESTIC_GOLDEN_Api\\Areas\\Payment\\CheckOutController.cs",
+              "RelativeDocumentMoniker": "MAJESTIC_GOLDEN_Api\\Areas\\Payment\\CheckOutController.cs",
+              "ToolTip": "C:\\Users\\Qusay\\source\\repos\\MAJESTIC_GOLDEN_Api-main\\MAJESTIC_GOLDEN_Api\\Areas\\Payment\\CheckOutController.cs",
+              "RelativeToolTip": "MAJESTIC_GOLDEN_Api\\Areas\\Payment\\CheckOutController.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAwwNoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T14:42:04.959Z",
+              "WhenOpened": "2025-11-26T22:28:03.928Z",
               "EditorCaption": ""
             },
             {
@@ -97,12 +107,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "dbo.Users [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/./MAJESTIC_GOLDEN/True/SqlTable/dbo.Users.sql",
-              "ToolTip": "dbo.Users [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-11-24T14:38:28.52Z",
+              "DocumentIndex": 0,
+              "Title": "CheckOutService.cs",
+              "DocumentMoniker": "C:\\Users\\Qusay\\source\\repos\\MAJESTIC_GOLDEN_Api-main\\MAJESTIC_GOLDEN_Api.BLL\\Services\\Classes\\CheckOutService.cs",
+              "RelativeDocumentMoniker": "MAJESTIC_GOLDEN_Api.BLL\\Services\\Classes\\CheckOutService.cs",
+              "ToolTip": "C:\\Users\\Qusay\\source\\repos\\MAJESTIC_GOLDEN_Api-main\\MAJESTIC_GOLDEN_Api.BLL\\Services\\Classes\\CheckOutService.cs",
+              "RelativeToolTip": "MAJESTIC_GOLDEN_Api.BLL\\Services\\Classes\\CheckOutService.cs",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAowKEAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T22:27:24.229Z",
               "EditorCaption": ""
             }
           ]
