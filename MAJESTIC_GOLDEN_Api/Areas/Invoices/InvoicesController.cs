@@ -22,13 +22,19 @@ namespace MAJESTIC_GOLDEN_Api.PLL.Areas.Invoices
     {
         private readonly IInvoiceService _invoiceService;
         private readonly IInvoiceRepository _invoiceRepository;
+        private readonly IInvoiceDocumentService _invoiceDocumentService;
         private readonly UserManager<ApplicationUser> _userManager;
 
-        public InvoicesController(IInvoiceService invoiceService, IInvoiceRepository invoiceRepository,UserManager<ApplicationUser> userManager)
+        public InvoicesController(
+            IInvoiceService invoiceService,
+            IInvoiceRepository invoiceRepository,
+            UserManager<ApplicationUser> userManager,
+            IInvoiceDocumentService invoiceDocumentService)
         {
             _invoiceService = invoiceService;
             _invoiceRepository = invoiceRepository;
             _userManager = userManager;
+            _invoiceDocumentService = invoiceDocumentService;
         }
 
         private string GetCurrentDoctorId()
@@ -181,6 +187,45 @@ namespace MAJESTIC_GOLDEN_Api.PLL.Areas.Invoices
 
             }
             return result.Success ? Ok(result) : NotFound(result);
+        }
+
+        [HttpGet("Print/{id}")]
+        [Authorize(Roles = "HeadDoctor,Receptionist,Invoices_Admin,SubDoctor,Patient")]
+        public async Task<IActionResult> PrintInvoice(int id)
+        {
+            var userRole = User.FindFirst(ClaimTypes.Role)?.Value;
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "";
+
+            var invoiceResult = await _invoiceService.GetInvoiceByIdAsync(id);
+            if (!invoiceResult.Success || invoiceResult.Data == null)
+            {
+                return NotFound(invoiceResult);
+            }
+
+            if (userRole == "Patient" && invoiceResult.Data.PatientUserId != userId)
+            {
+                return BadRequest(ApiResponse<InvoiceResponseDTO>.ErrorResponse(
+                    "You are not authorized to view this invoice",
+                    "أنت غير مخول بمشاهدة هذه الفاتورة"
+                ));
+            }
+
+            if (userRole == "SubDoctor" && invoiceResult.Data.DoctorId != userId)
+            {
+                return BadRequest(ApiResponse<InvoiceResponseDTO>.ErrorResponse(
+                    "You are not authorized to view this invoice",
+                    "أنت غير مخول بمشاهدة هذه الفاتورة"
+                ));
+            }
+
+            var pdfResult = await _invoiceDocumentService.GenerateInvoicePdfAsync(id);
+            if (!pdfResult.Success || pdfResult.Data == null)
+            {
+                return BadRequest(pdfResult);
+            }
+
+            var fileName = $"Invoice_{invoiceResult.Data.InvoiceNumber}.pdf";
+            return File(pdfResult.Data, "application/pdf", fileName);
         }
 
         [HttpGet("GetInvoiceByPatintId/{patientId}")]
@@ -446,7 +491,6 @@ namespace MAJESTIC_GOLDEN_Api.PLL.Areas.Invoices
                     AverageInvoiceAmount = myInvoices.Average(i => i.Total),
                     CollectionRate = totalRevenue > 0 ? Math.Round((totalPaid / totalRevenue) * 100, 2) : 0m,
 
-                    // Monthly revenue for current year
                     MonthlyRevenue = myInvoices
                         .Where(i => i.InvoiceDate.Year == DateTime.Now.Year)
                         .GroupBy(i => i.InvoiceDate.Month)
@@ -460,7 +504,6 @@ namespace MAJESTIC_GOLDEN_Api.PLL.Areas.Invoices
                         .OrderBy(m => m.Month)
                         .ToList(),
 
-                    // Top 5 patients by revenue
                     TopPatients = myInvoices
                         .GroupBy(i => new { i.PatientUserId, PatientName_En = i.Patient?.User?.FullName_En ?? "", PatientName_Ar = i.Patient?.User?.FullName_Ar ?? "" })
                         .Select(g => new
@@ -475,7 +518,6 @@ namespace MAJESTIC_GOLDEN_Api.PLL.Areas.Invoices
                         .Take(5)
                         .ToList(),
 
-                    // Recent invoices
                     RecentInvoices = myInvoices
                         .OrderByDescending(i => i.InvoiceDate)
                         .Take(5)

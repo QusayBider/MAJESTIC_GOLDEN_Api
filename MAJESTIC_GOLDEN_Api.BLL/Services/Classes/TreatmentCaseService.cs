@@ -51,7 +51,6 @@ namespace MAJESTIC_GOLDEN_Api.BLL.Services.Classes
         {
             try
             {
-                // Validate that the patient exists
                 var patients = await _patientRepository.FindAsync(p => p.UserId == request.PatientId);
                 var patient = patients.FirstOrDefault();
                 if (patient == null)

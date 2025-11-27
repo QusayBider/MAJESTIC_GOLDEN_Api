@@ -19,7 +19,7 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Models
         public int DurationMinutes { get; set; } = 30;
         
         public AppointmentStatus Status { get; set; } = AppointmentStatus.Pending;
-        public string Source { get; set; } = "Internal"; // Internal, Online
+        public string Source { get; set; } = "Internal"; 
         
         public string? Reason_En { get; set; }
         public string? Reason_Ar { get; set; }

@@ -2,7 +2,6 @@ namespace MAJESTIC_GOLDEN_Api.DAL.DTO.Responses
 {
     public class PatientToothResponseDTO
     {
-        // Composite Key
         public int ToothId { get; set; }
         public string PatientId { get; set; } = string.Empty;
         public string? DoctorId { get; set; }

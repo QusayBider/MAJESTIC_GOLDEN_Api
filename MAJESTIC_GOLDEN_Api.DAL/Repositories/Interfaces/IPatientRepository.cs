@@ -5,7 +5,7 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Repositories.Interfaces
     public interface IPatientRepository : IGenericRepository<Patient>
     {
         Task<Patient?> GetPatientWithDetailsAsync(string userId);
-        Task<Patient?> GetPatientForUpdateAsync(string userId); // New method for updates (with tracking)
+        Task<Patient?> GetPatientForUpdateAsync(string userId); 
         Task<IEnumerable<Patient>> GetPatientsByBranchAsync(int branchId);
         Task<Patient?> GetPatientByPhoneAsync(string phone);
         Task<Patient?> GetPatientByEmailAsync(string email);

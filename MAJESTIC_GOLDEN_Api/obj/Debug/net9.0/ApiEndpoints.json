@@ -1199,6 +1199,22 @@
   },
   {
     "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Invoices.InvoicesController",
+    "Method": "PrintInvoice",
+    "RelativePath": "api/Invoices/Invoices/Print/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MAJESTIC_GOLDEN_Api.PLL.Areas.Invoices.InvoicesController",
     "Method": "RecordPayment",
     "RelativePath": "api/Invoices/Invoices/Record_payment_for_invoice",
     "HttpMethod": "POST",

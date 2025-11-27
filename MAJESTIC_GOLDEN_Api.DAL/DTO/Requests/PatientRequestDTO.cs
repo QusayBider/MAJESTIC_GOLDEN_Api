@@ -14,7 +14,7 @@ namespace MAJESTIC_GOLDEN_Api.DAL.DTO.Requests
         public string FullName_Ar { get; set; } = string.Empty;
         
         [Required]
-        public string Gender { get; set; } = string.Empty; // Male/Female
+        public string Gender { get; set; } = string.Empty; 
         
         [Required]
         public DateTime DateOfBirth { get; set; }
@@ -26,19 +26,15 @@ namespace MAJESTIC_GOLDEN_Api.DAL.DTO.Requests
         [EmailAddress]
         public string? Email { get; set; }
         
-        // Address - العنوان
         public string? Address_En { get; set; }
         public string? Address_Ar { get; set; }
         
-        // Occupation - الوظيفة
         public string? Occupation_En { get; set; }
         public string? Occupation_Ar { get; set; }
         
-        // Marital Status - الحالة الاجتماعية
         public string? MaritalStatus_En { get; set; }
         public string? MaritalStatus_Ar { get; set; }
         
-        // Treatment Plan - خطة العلاج
         public string? TreatmentPlan_En { get; set; }
         public string? TreatmentPlan_Ar { get; set; }
         

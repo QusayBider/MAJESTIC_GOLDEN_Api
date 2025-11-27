@@ -5,6 +5,7 @@ using MAJESTIC_GOLDEN_Api.DAL.Enums;
 using MAJESTIC_GOLDEN_Api.DAL.Models;
 using MAJESTIC_GOLDEN_Api.DAL.Repositories.Interfaces;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.Extensions.Configuration;
 using Stripe;
 using Stripe.Checkout;
@@ -21,17 +22,20 @@ namespace MAJESTIC_GOLDEN_Api.BLL.Services.Classes
         private readonly IGenericRepository<Payment> _paymentRepository;
         private readonly IGenericRepository<PatientDebt> _debtRepository;
         private readonly IConfiguration _configuration;
+        private readonly IEmailSender _emailSender;
 
         public CheckOutService(
             IInvoiceRepository invoiceRepository,
             IGenericRepository<Payment> paymentRepository,
             IGenericRepository<PatientDebt> debtRepository,
-            IConfiguration configuration)
+            IConfiguration configuration,
+            IEmailSender emailSender)
         {
             _invoiceRepository = invoiceRepository;
             _paymentRepository = paymentRepository;
             _debtRepository = debtRepository;
             _configuration = configuration;
+            _emailSender = emailSender;
         }
 
         public async Task<CheckOutDTOResponse> ProcessPaymentAsync(CheckOutDTORequest request, string userId, HttpRequest httpRequest)
@@ -251,11 +255,118 @@ namespace MAJESTIC_GOLDEN_Api.BLL.Services.Classes
                     await _debtRepository.UpdateAsync(debt);
                 }
 
+                await SendPaymentSuccessEmailAsync(invoice, amount, paymentId);
+
                 return true;
             }
             catch (Exception)
             {
                 return false;
+            }
+        }
+
+        private async Task SendPaymentSuccessEmailAsync(DAL.Models.Invoice invoice, decimal amount, string transactionId)
+        {
+            try
+            {
+                var patientUser = invoice.Patient?.User;
+                if (patientUser == null || string.IsNullOrWhiteSpace(patientUser.Email))
+                {
+                    return;
+                }
+
+                var customerName = string.IsNullOrWhiteSpace(patientUser.FullName_En)
+                    ? patientUser.FullName ?? "Customer"
+                    : patientUser.FullName_En;
+
+                var companyName = _configuration["CompanySettings:Name"] ?? "Majestic Golden Dental Clinic";
+                var currency = _configuration["Stripe:Currency"] ?? "ILS";
+                var paymentDate = DateTime.UtcNow.ToString("MMMM dd, yyyy");
+                var year = DateTime.UtcNow.Year.ToString();
+
+                var body = @"
+
+                    <!DOCTYPE html>
+
+                    <html lang='en'>
+
+                    <head>
+
+                      <meta charset='UTF-8'>
+
+                      <title>Payment Successful</title>
+
+                    </head>
+
+                    <body style='font-family: Arial, sans-serif; background-color:#f8f9fa; margin:0; padding:0;'>
+
+                      <div style='max-width:600px; margin:20px auto; background:#ffffff; border-radius:8px; 
+
+                                  box-shadow:0 4px 8px rgba(0,0,0,0.05); overflow:hidden;'>
+
+                        <!-- Header -->
+
+                        <div style='background:#0d6efd; color:#fff; padding:20px; text-align:center;'>
+
+                          <h2 style='margin:0;'>✅ Payment Successful</h2>
+
+                        </div>
+
+                        <!-- Body -->
+
+                        <div style='padding:20px;'>
+
+                          <h4 style='color:#0d6efd; margin-top:0;'>Hello {customer_name},</h4>
+
+                          <p>Your Visa payment has been processed successfully. Below are the details:</p>
+
+                          <!-- Bootstrap-like card -->
+
+                          <div style='border:1px solid #dee2e6; border-radius:6px; padding:15px; background:#f8f9fa; margin:15px 0;'>
+
+                            <p style='margin:5px 0;'><strong>Transaction ID:</strong> {transaction_id}</p>
+
+                            <p style='margin:5px 0;'><strong>Amount Paid:</strong> {amount} {currency}</p>
+
+                            <p style='margin:5px 0;'><strong>Date:</strong> {payment_date}</p>
+
+                          </div>
+
+                          <p>Thank you for your purchase! If you have any questions, just reply to this email.</p>
+
+                          <p style='margin-bottom:0;'>— The {company_name} Team</p>
+
+                        </div>
+
+                        <!-- Footer -->
+
+                        <div style='background:#f1f1f1; color:#6c757d; text-align:center; padding:10px; font-size:12px;'>
+
+                          &copy; {year} {company_name}. All rights reserved.
+
+                        </div>
+
+                      </div>
+
+                    </body>
+
+                    </html>";
+
+                body = body.Replace("{customer_name}", customerName)
+                           .Replace("{transaction_id}", transactionId)
+                           .Replace("{amount}", amount.ToString("0.00"))
+                           .Replace("{currency}", currency)
+                           .Replace("{payment_date}", paymentDate)
+                           .Replace("{company_name}", companyName)
+                           .Replace("{year}", year);
+
+                var subject = $"Payment Confirmation - Invoice #{invoice.InvoiceNumber}";
+
+                await _emailSender.SendEmailAsync(patientUser.Email, subject, body);
+            }
+            catch
+            {
+               
             }
         }
     }

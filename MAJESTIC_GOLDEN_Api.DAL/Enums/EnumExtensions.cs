@@ -5,16 +5,10 @@ using System.Reflection;
 
 namespace MAJESTIC_GOLDEN_Api.DAL.Enums
 {
-    /// <summary>
-    /// Extension methods for Enum types
-    /// طرق توسيع لأنواع Enum
-    /// </summary>
+    
     public static class EnumExtensions
     {
-        /// <summary>
-        /// Get Description attribute value from enum
-        /// الحصول على قيمة Description من enum
-        /// </summary>
+       
         public static string GetDescription(this Enum value)
         {
             var field = value.GetType().GetField(value.ToString());
@@ -24,10 +18,7 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Enums
             return attribute?.Description ?? value.ToString();
         }
         
-        /// <summary>
-        /// Parse string to enum value
-        /// تحويل نص إلى قيمة enum
-        /// </summary>
+      
         public static T ParseEnum<T>(string value) where T : struct, Enum
         {
             if (string.IsNullOrWhiteSpace(value))
@@ -36,7 +27,6 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Enums
             if (Enum.TryParse<T>(value, true, out var result))
                 return result;
                 
-            // Try to find by Description
             var type = typeof(T);
             foreach (var field in type.GetFields())
             {
@@ -50,10 +40,7 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Enums
             return default;
         }
         
-        /// <summary>
-        /// Convert enum to string (Description if available, otherwise name)
-        /// تحويل enum إلى نص
-        /// </summary>
+      
         public static string ToStatusString(this Enum value)
         {
             return GetDescription(value);

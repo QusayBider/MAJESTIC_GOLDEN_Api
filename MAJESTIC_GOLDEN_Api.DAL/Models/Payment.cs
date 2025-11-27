@@ -15,7 +15,7 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Models
         public string? TransactionReference { get; set; }
         public string? Notes_En { get; set; }
         public string? Notes_Ar { get; set; }
-        public string? ReceivedBy { get; set; } // User ID
+        public string? ReceivedBy { get; set; } 
     }
 }
 

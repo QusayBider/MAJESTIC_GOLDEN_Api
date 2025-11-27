@@ -15,7 +15,7 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Repositories.Classes
         {
             return await context.Branches
                 .Include(b => b.Users)
-                    .ThenInclude(u => u.PatientProfile) // Include patient profiles for users who are patients
+                    .ThenInclude(u => u.PatientProfile) 
                 .AsNoTracking()
                 .FirstOrDefaultAsync(b => b.Id == id);
         }

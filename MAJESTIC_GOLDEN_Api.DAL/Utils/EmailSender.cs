@@ -18,11 +18,11 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Utils
             {
                 EnableSsl = true,
                 UseDefaultCredentials = false,
-                Credentials = new NetworkCredential("QusayBider@gmail.com", "hkqc giwb zegy okpp")
+                Credentials = new NetworkCredential("bdyrqsy32@gmail.com", "pyhr dijx hkcs mubr")
             };
 
             return client.SendMailAsync(
-                new MailMessage(from: "QusayBider@gmail.com",
+                new MailMessage(from: "bdyrqsy32@gmail.com",
                                 to: email,
                                 subject,
                                 message

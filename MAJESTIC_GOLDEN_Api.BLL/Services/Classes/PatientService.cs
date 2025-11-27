@@ -60,7 +60,7 @@ namespace MAJESTIC_GOLDEN_Api.BLL.Services.Classes
                 
                 var user = new ApplicationUser
                 {
-                    UserName = uniqueUsername, // Unique username with timestamp
+                    UserName = uniqueUsername, 
                     Email = request.Email,
                     PhoneNumber = request.Phone,
                     FullName_En = request.FullName_En,

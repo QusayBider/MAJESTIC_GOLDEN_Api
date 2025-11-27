@@ -30,7 +30,6 @@ namespace MAJESTIC_GOLDEN_Api.BLL.Services.Classes
         {
             try
             {
-                // Validate that the patient exists
                 var patients = await _patientRepository.FindAsync(p => p.UserId == request.PatientId);
                 var patient = patients.FirstOrDefault();
                 if (patient == null)
@@ -42,7 +41,6 @@ namespace MAJESTIC_GOLDEN_Api.BLL.Services.Classes
                     );
                 }
 
-                // Check if tooth record already exists
                 var existingTeeth = await _patientToothRepository.FindAsync(pt => 
                     pt.PatientUserId == request.PatientId && pt.ToothId == request.ToothId);
                 
@@ -53,7 +51,6 @@ namespace MAJESTIC_GOLDEN_Api.BLL.Services.Classes
                 {
                     var oldValues = _mapper.Map<PatientToothResponseDTO>(existingTooth);
 
-                    // Update existing record
                     _mapper.Map(request, existingTooth);
                     existingTooth.DoctorId = doctorId;
                     existingTooth.TreatmentDate = request.TreatmentDate ?? DateTime.UtcNow;
@@ -72,7 +69,6 @@ namespace MAJESTIC_GOLDEN_Api.BLL.Services.Classes
                 }
                 else
                 {
-                    // Create new record
                     patientTooth = _mapper.Map<PatientTooth>(request);
                     patientTooth.DoctorId = doctorId;
                     patientTooth.TreatmentDate = request.TreatmentDate ?? DateTime.UtcNow;

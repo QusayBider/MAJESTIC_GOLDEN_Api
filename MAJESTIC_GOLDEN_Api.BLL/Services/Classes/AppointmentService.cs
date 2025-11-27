@@ -81,7 +81,6 @@ namespace MAJESTIC_GOLDEN_Api.BLL.Services.Classes
                     );
                 }
 
-                // Validate a Patient profile exists (Patients table uses UserId as PK)
                 var patientProfile = await _patientRepository.GetPatientWithDetailsAsync(request.PatientUserId);
                 if (patientProfile == null)
                 {
@@ -91,7 +90,6 @@ namespace MAJESTIC_GOLDEN_Api.BLL.Services.Classes
                     );
                 }
 
-                // Validate that the doctor exists
                 var doctor = await _userRepository.GetUserByIdAsync(request.DoctorId);
                 if (doctor == null)
                 {
@@ -101,7 +99,6 @@ namespace MAJESTIC_GOLDEN_Api.BLL.Services.Classes
                     );
                 }
 
-                // Validate that the branch exists
                 var branch = await _branchRepository.GetByIdAsync(request.BranchId);
                 if (branch == null)
                 {

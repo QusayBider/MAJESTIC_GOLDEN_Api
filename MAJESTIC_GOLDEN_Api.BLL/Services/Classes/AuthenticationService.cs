@@ -74,11 +74,9 @@ namespace MAJESTIC_GOLDEN_Api.BLL.Services.Classes
             }
             else if (result.IsNotAllowed)
             {
-                // Check if email is not confirmed
                 var isEmailConfirmed = await _userManager.IsEmailConfirmedAsync(user);
                 if (!isEmailConfirmed)
                 {
-                    // Resend confirmation email
                     var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     var escapeToken = Uri.EscapeDataString(token);
                     var emailUrl = $"{Request.Scheme}://{Request.Host}/api/Identity/Account/confirmEmail?token={escapeToken}&userId={user.Id}";
@@ -293,7 +291,6 @@ namespace MAJESTIC_GOLDEN_Api.BLL.Services.Classes
                 user.Street
             };
 
-            // Update user properties
             user.FullName = updateRequest.FullName;
             user.PhoneNumber = updateRequest.PhoneNumber;
             user.City = updateRequest.City;

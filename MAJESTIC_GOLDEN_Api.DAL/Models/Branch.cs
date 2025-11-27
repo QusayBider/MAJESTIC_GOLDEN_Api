@@ -14,7 +14,6 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Models
         public string? Email { get; set; }
         public bool IsActive { get; set; } = true;
 
-        // Navigation properties
         public virtual ICollection<ApplicationUser> Users { get; set; } = new List<ApplicationUser>();
         public virtual ICollection<Appointment> Appointments { get; set; } = new List<Appointment>();
     }

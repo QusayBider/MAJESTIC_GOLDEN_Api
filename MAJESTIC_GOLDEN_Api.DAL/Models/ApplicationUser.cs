@@ -10,11 +10,9 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        // Basic Information - المعلومات الأساسية
         public string FullName_En { get; set; } = string.Empty;
         public string FullName_Ar { get; set; } = string.Empty;
         
-        // Computed property for backward compatibility
         public string FullName 
         { 
             get => FullName_En; 

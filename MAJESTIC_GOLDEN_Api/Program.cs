@@ -84,6 +84,7 @@ namespace MAJESTIC_GOLDEN_Api
             builder.Services.AddScoped<IAppointmentService, AppointmentService>();
             builder.Services.AddScoped<IServiceManagementService, ServiceManagementService>();
             builder.Services.AddScoped<IInvoiceService, InvoiceService>();
+            builder.Services.AddScoped<IInvoiceDocumentService, InvoiceDocumentService>();
             builder.Services.AddScoped<ILabRequestService, LabRequestService>();
             builder.Services.AddScoped<ICaseTransferService, CaseTransferService>();
             builder.Services.AddScoped<IDentalChartService, DentalChartService>();
@@ -132,7 +133,6 @@ namespace MAJESTIC_GOLDEN_Api
                 };
             });
 
-            // OpenAPI / Swagger
             builder.Services.AddOpenApi();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(c =>
@@ -149,7 +149,6 @@ namespace MAJESTIC_GOLDEN_Api
                     }
                 });
 
-                // Add JWT authentication to Swagger
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     Name = "Authorization",

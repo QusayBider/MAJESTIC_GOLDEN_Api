@@ -20,13 +20,13 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Utils
 
         public async Task DataSeedingAsync()
         {
-            // Apply pending migrations
+            
             if ((await _context.Database.GetPendingMigrationsAsync()).Any())
             {
                await _context.Database.MigrateAsync();
             }
 
-            // Seed Branches
+            
             if (!await _context.Branches.AnyAsync())
             {
                 var branches = new List<Branch>
@@ -58,7 +58,7 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Utils
             await _context.SaveChangesAsync();
             }
 
-            // Seed Services
+            
             if (!await _context.Services.AnyAsync())
             {
                 var services = new List<Service>
@@ -188,25 +188,21 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Utils
                 await _context.SaveChangesAsync();
             }
 
-            // Seed Demo Patients - removed for now
-            // Patients now need to be created through ApplicationUser first with Patient role
-            // Then Patient profile is created separately
-            // This should be done through the API endpoints
+            
         }
 
         public async Task IdentityRoleSeedingAsync()
         {
-            // Seed Roles
+           
             if (!await _roleManager.Roles.AnyAsync())
             {
-                var roles = new List<string> { "HeadDoctor", "SubDoctor", "Receptionist", "Patient", "Appointments_Admin", "Patients_Admin" };
+                var roles = new List<string> { "HeadDoctor", "SubDoctor", "Receptionist", "Patient", "Invoices_Admin", "Appointments_Admin", "Patients_Admin", "Laboratory","Branches_Admin",};
                 foreach (var role in roles)
                 {
                     await _roleManager.CreateAsync(new IdentityRole(role));
                 }
             }
 
-            // Seed Users
             if (!await _userManager.Users.AnyAsync())
             {
                 var branch = await _context.Branches.FirstOrDefaultAsync();
@@ -218,9 +214,9 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Utils
                     {
                         Email = "headdoctor@majesticgolden.com",
                         UserName = "headdoctor",
-                        FullName_En = "Dr. Omar Al-Rashid",
-                        FullName_Ar = "د. عمر الرشيد",
-                        PhoneNumber = "+962-79-1111111",
+                        FullName_En = "Dr.headdoctor ",
+                        FullName_Ar = "د.رئسي",
+                        PhoneNumber = "+972598755156",
                         EmailConfirmed = true,
                         BranchId = branchId,
                         Specialization = "General Dentistry & Management",
@@ -232,9 +228,9 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Utils
                     {
                         Email = "subdoctor@majesticgolden.com",
                         UserName = "subdoctor",
-                        FullName_En = "Dr. Sarah Al-Mahmoud",
-                        FullName_Ar = "د. سارة المحمود",
-                        PhoneNumber = "+962-79-2222222",
+                        FullName_En = "Dr. subdoctor",
+                        FullName_Ar = "د.فرعي",
+                        PhoneNumber = "+972598755156",
                         EmailConfirmed = true,
                         BranchId = branchId,
                         Specialization = "Cosmetic Dentistry",
@@ -246,9 +242,9 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Utils
                     {
                         Email = "receptionist@majesticgolden.com",
                         UserName = "receptionist",
-                        FullName_En = "Layla Ibrahim",
-                        FullName_Ar = "ليلى إبراهيم",
-                        PhoneNumber = "+962-79-3333333",
+                        FullName_En = "receptionist",
+                        FullName_Ar = "استعلامات",
+                        PhoneNumber = "+972598755156",
                         EmailConfirmed = true,
                         BranchId = branchId,
                         IsActive = true,
@@ -257,11 +253,11 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Utils
 
                     (new ApplicationUser
                     {
-                        Email = "patient@example.com",
+                        Email = "patient@majesticgolden.com",
                         UserName = "patient_demo",
-                        FullName_En = "Ali Al-Zahrani",
-                        FullName_Ar = "علي الزهراني",
-                        PhoneNumber = "+962-79-4444444",
+                        FullName_En = "patient",
+                        FullName_Ar = " مريض",
+                        PhoneNumber = "+972598755156",
                         EmailConfirmed = true,
                         IsActive = true,
                         CreatedAt = DateTime.UtcNow

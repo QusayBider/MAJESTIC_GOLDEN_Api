@@ -19,7 +19,7 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Models
         public string Reason_Ar { get; set; } = string.Empty;
         public string? Notes_En { get; set; }
         public string? Notes_Ar { get; set; }
-        public string Status { get; set; } = "Pending"; // Pending, Accepted, Rejected
+        public string Status { get; set; } = "Pending"; 
     }
 }
 

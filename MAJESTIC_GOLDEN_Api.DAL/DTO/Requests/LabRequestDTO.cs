@@ -28,7 +28,7 @@ namespace MAJESTIC_GOLDEN_Api.DAL.DTO.Requests
 
     public class LabRequestUpdateDTO
     {
-        public string? Status { get; set; } // Pending, InProgress, Ready, Received
+        public string? Status { get; set; } 
         public DateTime? ExpectedDate { get; set; }
         public DateTime? ReceivedDate { get; set; }
         public decimal? Cost { get; set; }

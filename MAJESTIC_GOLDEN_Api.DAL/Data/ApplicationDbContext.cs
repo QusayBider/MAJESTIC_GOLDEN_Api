@@ -11,7 +11,6 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Data
         {
         }
 
-        // DbSets
         public DbSet<Branch> Branches { get; set; }
         public DbSet<Patient> Patients { get; set; }
         public DbSet<PatientTooth> PatientTeeth { get; set; }
@@ -36,7 +35,6 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Data
         {
             base.OnModelCreating(builder);
             
-            // Identity tables
             builder.Entity<ApplicationUser>().ToTable("Users");
             builder.Entity<IdentityRole>().ToTable("Roles");
             builder.Entity<IdentityUserRole<string>>().ToTable("UsersRoles");
@@ -46,17 +44,14 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Data
             builder.Ignore<IdentityUserToken<string>>();
             builder.Ignore<IdentityRoleClaim<string>>();
 
-            // Configure relationships
             
-            // ApplicationUser - Branch
             builder.Entity<ApplicationUser>()
                 .HasOne(u => u.Branch)
                 .WithMany(b => b.Users)
                 .HasForeignKey(u => u.BranchId)
                 .OnDelete(DeleteBehavior.SetNull);
 
-            // Patient - ApplicationUser (One-to-Zero-or-One)
-            // Every Patient is a User, UserId is both PK and FK
+            
             builder.Entity<Patient>()
                 .HasKey(p => p.UserId);
             
@@ -82,7 +77,7 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Data
                     .OnDelete(DeleteBehavior.Restrict);
             });
 
-            // PatientTooth - Composite Key Configuration
+            
             builder.Entity<PatientTooth>()
                 .HasKey(pt => new { pt.ToothId, pt.PatientUserId });
 
@@ -98,14 +93,12 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Data
                 .HasForeignKey(pt => pt.DoctorId)
                 .OnDelete(DeleteBehavior.SetNull);
 
-            // PatientAttachment
             builder.Entity<PatientAttachment>()
                 .HasOne(pa => pa.Patient)
                 .WithMany(p => p.Attachments)
                 .HasForeignKey(pa => pa.PatientUserId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Invoice
             builder.Entity<Invoice>()
                 .HasOne(i => i.Patient)
                 .WithMany(p => p.Invoices)
@@ -118,7 +111,6 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Data
                 .HasForeignKey(i => i.DoctorId)
                 .OnDelete(DeleteBehavior.SetNull);
 
-            // InvoiceItem
             builder.Entity<InvoiceItem>()
                 .HasOne(ii => ii.Invoice)
                 .WithMany(i => i.Items)
@@ -131,14 +123,14 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Data
                 .HasForeignKey(ii => ii.ServiceId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Payment
+            
             builder.Entity<Payment>()
                 .HasOne(p => p.Invoice)
                 .WithMany(i => i.Payments)
                 .HasForeignKey(p => p.InvoiceId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // PatientDebt
+            
             builder.Entity<PatientDebt>()
                 .HasOne(pd => pd.Patient)
                 .WithMany(p => p.Debts)
@@ -151,7 +143,7 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Data
                 .HasForeignKey<PatientDebt>(pd => pd.InvoiceId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Appointment
+            
             builder.Entity<Appointment>()
                 .HasOne(a => a.Patient)
                 .WithMany(p => p.Appointments)
@@ -170,7 +162,7 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Data
                 .HasForeignKey(a => a.BranchId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // CaseTransfer
+           
             builder.Entity<CaseTransfer>()
                 .HasOne(ct => ct.Patient)
                 .WithMany(p => p.CaseTransfers)
@@ -189,7 +181,7 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Data
                 .HasForeignKey(ct => ct.ToDoctorId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // LabRequest
+            
             builder.Entity<LabRequest>()
                 .HasOne(lr => lr.Patient)
                 .WithMany(p => p.LabRequests)
@@ -208,7 +200,7 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Data
                 .HasForeignKey(lr => lr.DoctorId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Decimal precision
+          
             builder.Entity<Service>()
                 .Property(s => s.BasePrice)
                 .HasPrecision(18, 2);
@@ -261,10 +253,6 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Data
                 .Property(lr => lr.Cost)
                 .HasPrecision(18, 2);
 
-            // Indexes for better performance
-            // PhoneNumber index removed to allow duplicate phone numbers across users
-            // builder.Entity<ApplicationUser>()
-            //     .HasIndex(u => u.PhoneNumber);
 
             builder.Entity<ApplicationUser>()
                 .HasIndex(u => u.Email);
@@ -280,69 +268,67 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Data
                 .HasIndex(lr => lr.RequestNumber)
                 .IsUnique();
 
-            // ========== Treatment Cases Configuration ==========
             
-            // TreatmentCase - Patient
             builder.Entity<TreatmentCase>()
                 .HasOne(tc => tc.Patient)
                 .WithMany(p => p.TreatmentCases)
                 .HasForeignKey(tc => tc.PatientUserId)
                 .OnDelete(DeleteBehavior.Restrict);
             
-            // TreatmentCase - Branch
+        
             builder.Entity<TreatmentCase>()
                 .HasOne(tc => tc.Branch)
                 .WithMany()
                 .HasForeignKey(tc => tc.BranchId)
                 .OnDelete(DeleteBehavior.Restrict);
             
-            // TreatmentCase - Invoice (One-to-One optional)
+           
             builder.Entity<TreatmentCase>()
                 .HasOne(tc => tc.Invoice)
                 .WithOne()
                 .HasForeignKey<TreatmentCase>(tc => tc.InvoiceId)
                 .OnDelete(DeleteBehavior.SetNull);
             
-            // CaseTreatment - TreatmentCase
+            
             builder.Entity<CaseTreatment>()
                 .HasOne(ct => ct.Case)
                 .WithMany(tc => tc.Treatments)
                 .HasForeignKey(ct => ct.CaseId)
                 .OnDelete(DeleteBehavior.Cascade);
             
-            // CaseTreatment - Service
+           
             builder.Entity<CaseTreatment>()
                 .HasOne(ct => ct.Service)
                 .WithMany()
                 .HasForeignKey(ct => ct.ServiceId)
                 .OnDelete(DeleteBehavior.Restrict);
             
-            // CaseTreatment - Doctor
+           
             builder.Entity<CaseTreatment>()
                 .HasOne(ct => ct.Doctor)
                 .WithMany()
                 .HasForeignKey(ct => ct.DoctorId)
                 .OnDelete(DeleteBehavior.SetNull);
             
-            // CaseDoctor - Composite Key
+           
             builder.Entity<CaseDoctor>()
                 .HasKey(cd => new { cd.CaseId, cd.DoctorId });
             
-            // CaseDoctor - TreatmentCase
+            
             builder.Entity<CaseDoctor>()
                 .HasOne(cd => cd.Case)
                 .WithMany(tc => tc.CaseDoctors)
                 .HasForeignKey(cd => cd.CaseId)
                 .OnDelete(DeleteBehavior.Cascade);
             
-            // CaseDoctor - ApplicationUser
+          
             builder.Entity<CaseDoctor>()
                 .HasOne(cd => cd.Doctor)
                 .WithMany()
                 .HasForeignKey(cd => cd.DoctorId)
                 .OnDelete(DeleteBehavior.Cascade);
             
-            // Decimal Precision for CaseTreatment
+           
             builder.Entity<CaseTreatment>()
                 .Property(ct => ct.UnitPrice)
                 .HasPrecision(18, 2);
@@ -351,7 +337,7 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Data
                 .Property(ct => ct.TotalPrice)
                 .HasPrecision(18, 2);
             
-            // Indexes
+          
             builder.Entity<TreatmentCase>()
                 .HasIndex(tc => tc.CaseNumber)
                 .IsUnique();

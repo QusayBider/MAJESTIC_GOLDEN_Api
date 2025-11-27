@@ -58,7 +58,6 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Repositories.Classes
 
         public async Task<IEnumerable<TreatmentCase>> GetByStatusAsync(string status)
         {
-            // Parse string to enum
             var statusEnum = EnumExtensions.ParseEnum<TreatmentCaseStatus>(status);
             
             return await context.TreatmentCases

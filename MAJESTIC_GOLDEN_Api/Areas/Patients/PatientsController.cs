@@ -62,7 +62,6 @@ namespace MAJESTIC_GOLDEN_Api.PLL.Areas.Patients
         [Authorize(Roles = "HeadDoctor,SubDoctor,Receptionist,Patients_Admin,Patient")]
         public async Task<IActionResult> GetPatientById(string id)
         {
-            // Patient can only view their own data
             var userRole = User.FindFirst(ClaimTypes.Role)?.Value;
             if (userRole == "Patient")
             {

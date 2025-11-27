@@ -4,8 +4,8 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Models
 {
     public class PatientTooth : BaseModel
     {
-        // Composite Key: ToothId + PatientUserId
-        public int ToothId { get; set; } // 1-32 (tooth number)
+      
+        public int ToothId { get; set; } 
         public string PatientUserId { get; set; } = string.Empty;
         public Patient Patient { get; set; } = null!;
         
