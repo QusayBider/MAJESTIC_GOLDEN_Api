@@ -1,16 +1,11 @@
 
 using MAJESTIC_GOLDEN_Api.BLL.Mapping;
-using MAJESTIC_GOLDEN_Api.BLL.Services.Classes;
-using MAJESTIC_GOLDEN_Api.BLL.Services.Interfaces;
 using MAJESTIC_GOLDEN_Api.DAL.Data;
 using MAJESTIC_GOLDEN_Api.DAL.Models;
-using MAJESTIC_GOLDEN_Api.DAL.Repositories.Classes;
-using MAJESTIC_GOLDEN_Api.DAL.Repositories.Interfaces;
 using MAJESTIC_GOLDEN_Api.DAL.Utils;
-using MAJESTIC_GOLDEN_Api.Resources;
+using MAJESTIC_GOLDEN_Api.PLL;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -28,9 +23,14 @@ namespace MAJESTIC_GOLDEN_Api
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddControllers();
+            builder.Services.Config();
+            var connectionString =
+            builder.Configuration.GetConnectionString("DefaultConnection")
+                ?? throw new InvalidOperationException("ConnectionStrings"
+                + "'DefaultConnection' not found.");
 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer((connectionString)));
 
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {
@@ -43,12 +43,16 @@ namespace MAJESTIC_GOLDEN_Api
 
 
                 options.SignIn.RequireConfirmedEmail = true;
-                options.User.RequireUniqueEmail = true; 
+                options.User.RequireUniqueEmail = true;
             })
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
 
             builder.Services.AddAutoMapper(typeof(MappingProfile));
+
+
+            
+
 
             builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
             builder.Services.Configure<RequestLocalizationOptions>(options =>
@@ -64,41 +68,7 @@ namespace MAJESTIC_GOLDEN_Api
                 options.SupportedUICultures = supportedCultures;
             });
 
-            // Repositories
-            builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-            builder.Services.AddScoped<IUserRepository, UserRepository>();
-            builder.Services.AddScoped<IBranchRepository, BranchRepository>();
-            builder.Services.AddScoped<IPatientRepository, PatientRepository>();
-            builder.Services.AddScoped<IAppointmentRepository, AppointmentRepository>();
-            builder.Services.AddScoped<IInvoiceRepository, InvoiceRepository>();
-            builder.Services.AddScoped<ILabRequestRepository, LabRequestRepository>();
-            builder.Services.AddScoped<ITreatmentCaseRepository, TreatmentCaseRepository>();
-            builder.Services.AddScoped<ILaboratoryRepository, LaboratoryRepository>();
-            builder.Services.AddScoped<IAuditLogRepository, AuditLogRepository>();
-            builder.Services.AddScoped<IFileRepository, FileRepository>();
-
-            // Services
-            builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
-            builder.Services.AddScoped<IBranchService, BranchService>();
-            builder.Services.AddScoped<IPatientService, PatientService>();
-            builder.Services.AddScoped<IAppointmentService, AppointmentService>();
-            builder.Services.AddScoped<IServiceManagementService, ServiceManagementService>();
-            builder.Services.AddScoped<IInvoiceService, InvoiceService>();
-            builder.Services.AddScoped<IInvoiceDocumentService, InvoiceDocumentService>();
-            builder.Services.AddScoped<ILabRequestService, LabRequestService>();
-            builder.Services.AddScoped<ICaseTransferService, CaseTransferService>();
-            builder.Services.AddScoped<IDentalChartService, DentalChartService>();
-            builder.Services.AddScoped<IDashboardService, DashboardService>();
-            builder.Services.AddScoped<ITreatmentCaseService, TreatmentCaseService>();
-            builder.Services.AddScoped<ILaboratoryService, LaboratoryService>();
-            builder.Services.AddScoped<IAuditLogger, AuditLogger>();
-            builder.Services.AddScoped<IFileService, FileService>();
-            builder.Services.AddScoped<ICheckOutService, CheckOutService>();
-
-            builder.Services.AddScoped<IFileRepository, FileRepository>();
-
-            builder.Services.AddScoped<ISeedData, SeedData>();
-            builder.Services.AddScoped<IEmailSender, EmailSender>();
+            
 
             var corsPolicy = "DentalClinicPolicy";
             builder.Services.AddCors(option =>
@@ -129,7 +99,7 @@ namespace MAJESTIC_GOLDEN_Api
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(
-                        Encoding.UTF8.GetBytes(builder.Configuration.GetSection("JwtConnection")["securityKey"] ?? "DefaultSecurityKeyForDevelopment12345"))
+                        Encoding.UTF8.GetBytes(builder.Configuration["JwtConnection:securityKey"]!))
                 };
             });
 
@@ -177,7 +147,7 @@ namespace MAJESTIC_GOLDEN_Api
 
             var app = builder.Build();
 
-            if (app.Environment.IsDevelopment())
+            if (app.Environment.IsDevelopment()|| app.Environment.IsProduction())
             {
                 app.MapOpenApi();
                 app.MapScalarApiReference();

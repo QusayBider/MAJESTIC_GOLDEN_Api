@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("MAJESTIC_GOLDEN_Api.DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b33790aba0f911dd708907390fbe2432883d8ca0")]
 [assembly: System.Reflection.AssemblyProductAttribute("MAJESTIC_GOLDEN_Api.DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MAJESTIC_GOLDEN_Api.DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

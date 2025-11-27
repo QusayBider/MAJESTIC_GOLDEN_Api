@@ -1,0 +1,13 @@
+C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api.DAL\bin\Release\net9.0\MAJESTIC_GOLDEN_Api.DAL.deps.json
+C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api.DAL\bin\Release\net9.0\MAJESTIC_GOLDEN_Api.DAL.dll
+C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api.DAL\bin\Release\net9.0\MAJESTIC_GOLDEN_Api.DAL.pdb
+C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api.DAL\obj\Release\net9.0\MAJESTIC_GOLDEN_Api.DAL.csproj.AssemblyReference.cache
+C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api.DAL\obj\Release\net9.0\MAJESTIC_GOLDEN_Api.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api.DAL\obj\Release\net9.0\MAJESTIC_GOLDEN_Api.DAL.AssemblyInfoInputs.cache
+C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api.DAL\obj\Release\net9.0\MAJESTIC_GOLDEN_Api.DAL.AssemblyInfo.cs
+C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api.DAL\obj\Release\net9.0\MAJESTIC_GOLDEN_Api.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api.DAL\obj\Release\net9.0\MAJESTIC_GOLDEN_Api.DAL.sourcelink.json
+C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api.DAL\obj\Release\net9.0\MAJESTIC_GOLDEN_Api.DAL.dll
+C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api.DAL\obj\Release\net9.0\refint\MAJESTIC_GOLDEN_Api.DAL.dll
+C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api.DAL\obj\Release\net9.0\MAJESTIC_GOLDEN_Api.DAL.pdb
+C:\Users\Qusay\source\repos\MAJESTIC_GOLDEN_Api-main\MAJESTIC_GOLDEN_Api.DAL\obj\Release\net9.0\ref\MAJESTIC_GOLDEN_Api.DAL.dll
