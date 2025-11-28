@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("647cd867-d705-4c5e-9375-4addf3f65ded")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("MAJESTIC_GOLDEN_Api.PLL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b33790aba0f911dd708907390fbe2432883d8ca0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+42dd66354d070b1024260d816488651599328452")]
 [assembly: System.Reflection.AssemblyProductAttribute("MAJESTIC_GOLDEN_Api.PLL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MAJESTIC_GOLDEN_Api.PLL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

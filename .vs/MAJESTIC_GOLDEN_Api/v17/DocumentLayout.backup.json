@@ -61,8 +61,7 @@
               "RelativeToolTip": "..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\647cd867-d705-4c5e-9375-4addf3f65ded\\secrets.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-27T20:13:12.904Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-27T20:13:12.904Z"
             },
             {
               "$type": "Document",
@@ -72,7 +71,7 @@
               "RelativeDocumentMoniker": "MAJESTIC_GOLDEN_Api\\Program.cs",
               "ToolTip": "C:\\Users\\Qusay\\source\\repos\\MAJESTIC_GOLDEN_Api-main\\MAJESTIC_GOLDEN_Api\\Program.cs*",
               "RelativeToolTip": "MAJESTIC_GOLDEN_Api\\Program.cs*",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAwwGUAAABfAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGUAAABfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-27T19:59:57.602Z",
               "EditorCaption": ""
@@ -80,15 +79,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "MAJESTIC_GOLDEN_Api.PLL",
+              "Title": "MAJESTIC_GOLDEN_Api.PLL.csproj",
               "DocumentMoniker": "C:\\Users\\Qusay\\source\\repos\\MAJESTIC_GOLDEN_Api-main\\MAJESTIC_GOLDEN_Api\\MAJESTIC_GOLDEN_Api.PLL.csproj",
               "RelativeDocumentMoniker": "MAJESTIC_GOLDEN_Api\\MAJESTIC_GOLDEN_Api.PLL.csproj",
               "ToolTip": "C:\\Users\\Qusay\\source\\repos\\MAJESTIC_GOLDEN_Api-main\\MAJESTIC_GOLDEN_Api\\MAJESTIC_GOLDEN_Api.PLL.csproj",
               "RelativeToolTip": "MAJESTIC_GOLDEN_Api\\MAJESTIC_GOLDEN_Api.PLL.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-27T18:36:59.107Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-27T18:36:59.107Z"
             },
             {
               "$type": "Document",
@@ -100,8 +98,7 @@
               "RelativeToolTip": "MAJESTIC_GOLDEN_Api\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-27T18:34:11.351Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-27T18:34:11.351Z"
             },
             {
               "$type": "Document",
@@ -113,8 +110,7 @@
               "RelativeToolTip": "MAJESTIC_GOLDEN_Api\\appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-27T18:32:12.395Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-27T18:32:12.395Z"
             },
             {
               "$type": "Document",
@@ -126,8 +122,7 @@
               "RelativeToolTip": "MAJESTIC_GOLDEN_Api\\AppConfiguration.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAgwC0AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T14:35:30.149Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-27T14:35:30.149Z"
             }
           ]
         }
