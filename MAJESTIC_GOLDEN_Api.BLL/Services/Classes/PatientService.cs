@@ -291,7 +291,7 @@ namespace MAJESTIC_GOLDEN_Api.BLL.Services.Classes
         {
             try
             {
-                var patients = await _patientRepository.GetAllAsync();
+                var patients = await _patientRepository.GetPatientsWithDetailsAsync();
                 var response = _mapper.Map<IEnumerable<PatientResponseDTO>>(patients);
 
                 return ApiResponse<IEnumerable<PatientResponseDTO>>.SuccessResponse(

@@ -25,9 +25,22 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Repositories.Classes
                 .FirstOrDefaultAsync(p => p.UserId == userId);
         }
 
+        public async Task<List<Patient>> GetPatientsWithDetailsAsync()
+        {
+            return await context.Patients
+                .Include(p => p.User)
+                    .ThenInclude(u => u.Branch)
+                .Include(p => p.PatientTeeth)
+                .Include(p => p.Appointments)
+                .Include(p => p.Invoices)
+                .Include(p => p.Debts)
+                .AsNoTracking()
+                .ToListAsync();
+        }
+
         public async Task<Patient?> GetPatientForUpdateAsync(string userId)
         {
-            // This method is used for updates - WITH tracking (no AsNoTracking)
+           
             return await context.Patients
                 .Include(p => p.User)
                     .ThenInclude(u => u.Branch)

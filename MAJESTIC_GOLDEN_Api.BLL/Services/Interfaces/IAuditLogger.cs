@@ -19,3 +19,4 @@ namespace MAJESTIC_GOLDEN_Api.BLL.Services.Interfaces
 
 
 
+

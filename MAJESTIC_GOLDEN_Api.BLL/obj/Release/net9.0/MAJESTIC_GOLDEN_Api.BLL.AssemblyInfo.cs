@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MAJESTIC_GOLDEN_Api.BLL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+42dd66354d070b1024260d816488651599328452")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b2ab8a9d8c4380e984b91db61b3704f98527e07")]
 [assembly: System.Reflection.AssemblyProductAttribute("MAJESTIC_GOLDEN_Api.BLL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MAJESTIC_GOLDEN_Api.BLL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

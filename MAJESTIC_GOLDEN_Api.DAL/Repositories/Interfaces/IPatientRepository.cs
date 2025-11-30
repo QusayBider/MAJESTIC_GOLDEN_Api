@@ -10,6 +10,7 @@ namespace MAJESTIC_GOLDEN_Api.DAL.Repositories.Interfaces
         Task<Patient?> GetPatientByPhoneAsync(string phone);
         Task<Patient?> GetPatientByEmailAsync(string email);
         Task<IEnumerable<Patient>> SearchPatientsAsync(string searchTerm);
+        Task<List<Patient>> GetPatientsWithDetailsAsync();
     }
 }
 
