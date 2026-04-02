@@ -1,7 +1,7 @@
 # 🦷 Majestic Golden Dental Clinic API 🦷
 ### *واجهة برمجة عيادة ماجستيك غولدن لطب الأسنان*
 
-![Majestic Golden Banner]([assets/banner.png](https://github.com/QusayBider/MAJESTIC_GOLDEN_Api/blob/main/MAJESTIC_GOLDEN_Api/wwwroot/Files/banner.png))
+![Majestic Golden Banner]((https://github.com/QusayBider/MAJESTIC_GOLDEN_Api/blob/main/MAJESTIC_GOLDEN_Api/wwwroot/Files/banner.png))
 
 A professional, high-performance, and bilingual (Arabic/English) **Dental Clinic Management System API**. Built with .NET 9 and designed using a robust 3-Layer Architecture to handle multi-branch clinics, patient treatment cases, billing, and specialized dental lab integrations.
 
@@ -118,8 +118,5 @@ Once the project is running (usually on `https://localhost:7198`), you can acces
 
 For support or business inquiries:
 -   **Organization**: Majestic Golden Dental Clinic
--   **Email**: info@majesticgolden.com
--   **Website**: [majesticgolden.com](http://majesticgolden.com)
+-   **Email**: QusayBdier@gmail.com.com
 
----
-*Developed with Passion for Modern Dental Care.*
